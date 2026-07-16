@@ -1,0 +1,652 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>CTF Writeup 展示索引</title>
+    <url>/2026/07/16/ctf-writeup-showcase/</url>
+    <content><![CDATA[<p>这里作为 CTF Writeup 的展示入口，后续比赛复盘和题目分析可以按方向沉淀到对应分类。</p>
+<h2 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h2><p>记录 Web 安全、漏洞利用、源码审计和渗透思路。</p>
+<h2 id="Pwn"><a href="#Pwn" class="headerlink" title="Pwn"></a>Pwn</h2><p>记录二进制漏洞利用、glibc、ROP、堆利用和调试过程。</p>
+<h2 id="Reverse"><a href="#Reverse" class="headerlink" title="Reverse"></a>Reverse</h2><p>记录逆向分析、算法还原、壳处理和符号恢复。</p>
+<h2 id="Misc"><a href="#Misc" class="headerlink" title="Misc"></a>Misc</h2><p>记录流量分析、取证、密码学杂项和隐写分析。</p>
+]]></content>
+      <categories>
+        <category>安全研究</category>
+        <category>CTF</category>
+        <category>Web</category>
+        <category>Pwn</category>
+        <category>Reverse</category>
+        <category>Misc</category>
+      </categories>
+      <tags>
+        <tag>CTF</tag>
+        <tag>Writeup</tag>
+        <tag>Web</tag>
+        <tag>Pwn</tag>
+        <tag>Reverse</tag>
+        <tag>Misc</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI Agent 实验索引</title>
+    <url>/2026/07/16/ai-agent-lab-index/</url>
+    <content><![CDATA[<p>这个栏目用于记录 AI Agent、LLM 工程化和自动化工作流实验。</p>
+<h2 id="Agent"><a href="#Agent" class="headerlink" title="Agent"></a>Agent</h2><p>记录工具调用、任务分解、记忆、规划和多 Agent 协作。</p>
+<h2 id="LLM"><a href="#LLM" class="headerlink" title="LLM"></a>LLM</h2><p>记录模型使用、Prompt 设计、评测、RAG 和应用集成。</p>
+]]></content>
+      <categories>
+        <category>AI</category>
+        <category>Agent</category>
+        <category>LLM</category>
+      </categories>
+      <tags>
+        <tag>AI</tag>
+        <tag>Agent</tag>
+        <tag>LLM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>开发笔记索引</title>
+    <url>/2026/07/16/development-notes-index/</url>
+    <content><![CDATA[<p>这个栏目用于整理开发语言、脚本工具和工程化实践。</p>
+<h2 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h2><p>记录自动化脚本、数据处理、安全工具和 Web 后端实践。</p>
+<h2 id="Go"><a href="#Go" class="headerlink" title="Go"></a>Go</h2><p>记录服务端开发、命令行工具、并发模型和云原生生态。</p>
+]]></content>
+      <categories>
+        <category>开发</category>
+        <category>Python</category>
+        <category>Go</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>Go</tag>
+        <tag>Development</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>云原生实践索引</title>
+    <url>/2026/07/16/cloud-native-notes-index/</url>
+    <content><![CDATA[<p>这个栏目用于整理容器、集群和 CI&#x2F;CD 相关实践。</p>
+<h2 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h2><p>记录镜像构建、Compose 编排、网络、存储和容器排错。</p>
+<h2 id="Kubernetes"><a href="#Kubernetes" class="headerlink" title="Kubernetes"></a>Kubernetes</h2><p>记录集群组件、工作负载、服务发现、Ingress、存储和可观测性。</p>
+<h2 id="Jenkins"><a href="#Jenkins" class="headerlink" title="Jenkins"></a>Jenkins</h2><p>记录流水线、凭据管理、构建环境和自动化部署。</p>
+]]></content>
+      <categories>
+        <category>云原生</category>
+        <category>Docker</category>
+        <category>Kubernetes</category>
+        <category>Jenkins</category>
+      </categories>
+      <tags>
+        <tag>Docker</tag>
+        <tag>Kubernetes</tag>
+        <tag>Jenkins</tag>
+        <tag>DevOps</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ciallo～(∠・ω&lt; )⌒★</title>
+    <url>/2025/11/18/hello-world/</url>
+    <content><![CDATA[<h2 id="欢迎喵～"><a href="#欢迎喵～" class="headerlink" title="欢迎喵～"></a>欢迎喵～</h2>]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2025/11/27/vim/</url>
+    <content><![CDATA[<h1 id="Vim常用快捷键及命令手册"><a href="#Vim常用快捷键及命令手册" class="headerlink" title="Vim常用快捷键及命令手册"></a>Vim常用快捷键及命令手册</h1><style>
+h1 { color: #2c3e50; }
+h2 { color: #34495e; }
+table { 
+    background-color: #f8f9fa;
+    border-radius: 5px;
+}
+th { 
+    background-color: #3498db;
+    color: white;
+}
+td:nth-child(2) {
+    color: #e74c3c;
+    font-weight: bold;
+}
+</style>
+
+<h2 id="1-模式切换"><a href="#1-模式切换" class="headerlink" title="1. 模式切换"></a>1. 模式切换</h2><h3 id="进入不同模式"><a href="#进入不同模式" class="headerlink" title="进入不同模式"></a>进入不同模式</h3><table>
+<thead>
+<tr>
+<th>模式</th>
+<th>快捷键</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>命令模式</td>
+<td><code>Esc</code></td>
+<td>退出其他模式，进入命令模式</td>
+</tr>
+<tr>
+<td>插入模式</td>
+<td><code>i</code></td>
+<td>进入插入模式</td>
+</tr>
+<tr>
+<td>可视模式</td>
+<td><code>v</code></td>
+<td>进入可视模式</td>
+</tr>
+<tr>
+<td>可视行模式</td>
+<td><code>V</code></td>
+<td>进入可视行模式</td>
+</tr>
+</tbody></table>
+<h3 id="退出不同模式"><a href="#退出不同模式" class="headerlink" title="退出不同模式"></a>退出不同模式</h3><table>
+<thead>
+<tr>
+<th>模式</th>
+<th>快捷键</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>命令模式</td>
+<td><code>Esc</code></td>
+<td>退出其他模式，进入命令模式</td>
+</tr>
+<tr>
+<td>插入模式</td>
+<td><code>Esc</code></td>
+<td>退出插入模式，进入命令模式</td>
+</tr>
+<tr>
+<td>可视模式</td>
+<td><code>Esc</code></td>
+<td>退出可视模式，进入命令模式</td>
+</tr>
+<tr>
+<td>可视行模式</td>
+<td><code>Esc</code></td>
+<td>退出可视行模式，进入命令模式</td>
+</tr>
+<tr>
+<td>可视块模式</td>
+<td><code>Esc</code></td>
+<td>退出可视块模式，进入命令模式</td>
+</tr>
+</tbody></table>
+<h2 id="2-常用命令"><a href="#2-常用命令" class="headerlink" title="2. 常用命令"></a>2. 常用命令</h2><h3 id="光标移动"><a href="#光标移动" class="headerlink" title="光标移动"></a>光标移动</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>快捷键</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>移动到行首</td>
+<td><code>0</code></td>
+<td>移动到行首</td>
+</tr>
+<tr>
+<td>移动到行尾</td>
+<td><code>$</code></td>
+<td>移动到行尾</td>
+</tr>
+<tr>
+<td>移动到文件开头</td>
+<td><code>gg</code></td>
+<td>移动到文件开头</td>
+</tr>
+<tr>
+<td>移动到文件结尾</td>
+<td><code>G</code></td>
+<td>移动到文件结尾</td>
+</tr>
+<tr>
+<td>向上移动一行</td>
+<td><code>k</code></td>
+<td>向上移动一行</td>
+</tr>
+<tr>
+<td>向下移动一行</td>
+<td><code>j</code></td>
+<td>向下移动一行</td>
+</tr>
+<tr>
+<td>向上移动半页</td>
+<td><code>Ctrl + b</code></td>
+<td>向上移动半页</td>
+</tr>
+<tr>
+<td>向下移动半页</td>
+<td><code>Ctrl + f</code></td>
+<td>向下移动半页</td>
+</tr>
+<tr>
+<td>向上移动一页</td>
+<td><code>PageUp</code></td>
+<td>向上移动一页</td>
+</tr>
+<tr>
+<td>向下移动一页</td>
+<td><code>PageDown</code></td>
+<td>向下移动一页</td>
+</tr>
+<tr>
+<td>向上移动指定行数</td>
+<td><code>Ctrl + g</code></td>
+<td>向上移动指定行数</td>
+</tr>
+<tr>
+<td>向下移动指定行数</td>
+<td><code>Ctrl + g</code></td>
+<td>向下移动指定行数</td>
+</tr>
+</tbody></table>
+<h3 id="文本编辑"><a href="#文本编辑" class="headerlink" title="文本编辑"></a>文本编辑</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>快捷键</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>插入文本</td>
+<td><code>i</code></td>
+<td>在光标前插入文本</td>
+</tr>
+<tr>
+<td>替换文本</td>
+<td><code>r</code></td>
+<td>替换光标下的一个字符</td>
+</tr>
+<tr>
+<td>替换行</td>
+<td><code>R</code></td>
+<td>替换整行文本</td>
+</tr>
+<tr>
+<td>删除字符</td>
+<td><code>x</code></td>
+<td>删除光标下的一个字符</td>
+</tr>
+<tr>
+<td>删除行</td>
+<td><code>dd</code></td>
+<td>删除光标所在的行</td>
+</tr>
+<tr>
+<td>删除单词</td>
+<td><code>dw</code></td>
+<td>删除光标所在的单词</td>
+</tr>
+<tr>
+<td>删除到行尾</td>
+<td><code>d$</code></td>
+<td>删除光标到行尾的文本</td>
+</tr>
+<tr>
+<td>删除到行首</td>
+<td><code>d0</code></td>
+<td>删除光标到行首的文本</td>
+</tr>
+<tr>
+<td>删除到文件开头</td>
+<td><code>dgg</code></td>
+<td>删除光标到文件开头的文本</td>
+</tr>
+<tr>
+<td>删除到文件结尾</td>
+<td><code>dG</code></td>
+<td>删除光标到文件结尾的文本</td>
+</tr>
+<tr>
+<td>复制行</td>
+<td><code>yy</code></td>
+<td>复制光标所在的行</td>
+</tr>
+<tr>
+<td>复制单词</td>
+<td><code>yw</code></td>
+<td>复制光标所在的单词</td>
+</tr>
+<tr>
+<td>复制到行尾</td>
+<td><code>y$</code></td>
+<td>复制光标到行尾的文本</td>
+</tr>
+<tr>
+<td>复制到行首</td>
+<td><code>y0</code></td>
+<td>复制光标到行首的文本</td>
+</tr>
+<tr>
+<td>复制到文件开头</td>
+<td><code>ygg</code></td>
+<td>复制光标到文件开头的文本</td>
+</tr>
+<tr>
+<td>复制到文件结尾</td>
+<td><code>yG</code></td>
+<td>复制光标到文件结尾的文本</td>
+</tr>
+<tr>
+<td>粘贴文本</td>
+<td><code>p</code></td>
+<td>在光标后粘贴文本</td>
+</tr>
+<tr>
+<td>粘贴文本到行首</td>
+<td><code>P</code></td>
+<td>在光标前粘贴文本</td>
+</tr>
+<tr>
+<td>撤销操作</td>
+<td><code>u</code></td>
+<td>撤销上一次操作</td>
+</tr>
+<tr>
+<td>重做操作</td>
+<td><code>Ctrl + r</code></td>
+<td>重做上一次撤销的操作</td>
+</tr>
+<tr>
+<td>查找文本</td>
+<td><code>/</code></td>
+<td>查找文本，按 <code>Enter</code> 键向下查找，按 <code>N</code> 键查找下一个匹配项</td>
+</tr>
+<tr>
+<td>替换文本</td>
+<td><code>:%s/old/new/g</code></td>
+<td>将文件中的所有 <code>old</code> 替换为 <code>new</code></td>
+</tr>
+<tr>
+<td>替换指定行文本</td>
+<td><code>:s/old/new/g</code></td>
+<td>将当前行中的所有 <code>old</code> 替换为 <code>new</code></td>
+</tr>
+<tr>
+<td>替换指定范围文本</td>
+<td><code>:start,end s/old/new/g</code></td>
+<td>将指定范围内的所有 <code>old</code> 替换为 <code>new</code></td>
+</tr>
+</tbody></table>
+<h3 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>快捷键</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>打开文件</td>
+<td><code>:e filename</code></td>
+<td>打开文件 <code>filename</code></td>
+</tr>
+<tr>
+<td>保存文件</td>
+<td><code>:w</code></td>
+<td>保存当前文件</td>
+</tr>
+<tr>
+<td>另存为文件</td>
+<td><code>:w filename</code></td>
+<td>将当前文件另存为 <code>filename</code></td>
+</tr>
+<tr>
+<td>退出 Vim</td>
+<td><code>:q</code></td>
+<td>退出 Vim</td>
+</tr>
+<tr>
+<td>强制退出 Vim</td>
+<td><code>:q!</code></td>
+<td>强制退出 Vim</td>
+</tr>
+<tr>
+<td>保存并退出 Vim</td>
+<td><code>:wq</code></td>
+<td>保存当前文件并退出 Vim</td>
+</tr>
+<tr>
+<td>强制保存并退出 Vim</td>
+<td><code>:wq!</code></td>
+<td>强制保存当前文件并退出 Vim</td>
+</tr>
+<tr>
+<td>分屏打开文件</td>
+<td><code>:sp filename</code></td>
+<td>分屏打开文件 <code>filename</code></td>
+</tr>
+<tr>
+<td>水平分屏打开文件</td>
+<td><code>:vsp filename</code></td>
+<td>水平分屏打开文件 <code>filename</code></td>
+</tr>
+<tr>
+<td>关闭当前窗口</td>
+<td><code>:q</code></td>
+<td>关闭当前窗口</td>
+</tr>
+<tr>
+<td>关闭所有窗口</td>
+<td><code>:qa</code></td>
+<td>关闭所有窗口</td>
+</tr>
+<tr>
+<td>切换窗口</td>
+<td><code>Ctrl + w</code></td>
+<td>切换窗口</td>
+</tr>
+<tr>
+<td>切换到上一个窗口</td>
+<td><code>Ctrl + w + h</code></td>
+<td>切换到上一个窗口</td>
+</tr>
+<tr>
+<td>切换到下一个窗口</td>
+<td><code>Ctrl + w + l</code></td>
+<td>切换到下一个窗口</td>
+</tr>
+<tr>
+<td>切换到最左边的窗口</td>
+<td><code>Ctrl + w + j</code></td>
+<td>切换到最左边的窗口</td>
+</tr>
+<tr>
+<td>切换到最右边的窗口</td>
+<td><code>Ctrl + w + k</code></td>
+<td>切换到最右边的窗口</td>
+</tr>
+<tr>
+<td>切换到最上边的窗口</td>
+<td><code>Ctrl + w + j</code></td>
+<td>切换到最上边的窗口</td>
+</tr>
+<tr>
+<td>切换到最下边的窗口</td>
+<td><code>Ctrl + w + k</code></td>
+<td>切换到最下边的窗口</td>
+</tr>
+<tr>
+<td>切换到指定编号的窗口</td>
+<td><code>Ctrl + w + n</code></td>
+<td>切换到指定编号的窗口</td>
+</tr>
+<tr>
+<td>切换到指定名称的窗口</td>
+<td><code>Ctrl + w + n</code></td>
+<td>切换到指定名称的窗口</td>
+</tr>
+</tbody></table>
+<h3 id="其他命令"><a href="#其他命令" class="headerlink" title="其他命令"></a>其他命令</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>快捷键</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>显示行号</td>
+<td><code>:set number</code></td>
+<td>显示行号</td>
+</tr>
+<tr>
+<td>隐藏行号</td>
+<td><code>:set nonumber</code></td>
+<td>隐藏行号</td>
+</tr>
+<tr>
+<td>显示状态栏</td>
+<td><code>:set ruler</code></td>
+<td>显示状态栏</td>
+</tr>
+<tr>
+<td>隐藏状态栏</td>
+<td><code>:set noruler</code></td>
+<td>隐藏状态栏</td>
+</tr>
+<tr>
+<td>显示光标位置</td>
+<td><code>:set cursorline</code></td>
+<td>显示光标位置</td>
+</tr>
+<tr>
+<td>隐藏光标位置</td>
+<td><code>:set nocursorline</code></td>
+<td>隐藏光标位置</td>
+</tr>
+<tr>
+<td>显示行尾符号</td>
+<td><code>:set showendofline</code></td>
+<td>显示行尾符号</td>
+</tr>
+<tr>
+<td>隐藏行尾符号</td>
+<td><code>:set noshowendofline</code></td>
+<td>隐藏行尾符号</td>
+</tr>
+<tr>
+<td>显示空白字符</td>
+<td><code>:set list</code></td>
+<td>显示空白字符</td>
+</tr>
+<tr>
+<td>隐藏空白字符</td>
+<td><code>:set nolist</code></td>
+<td>隐藏空白字符</td>
+</tr>
+<tr>
+<td>显示匹配括号</td>
+<td><code>:set showmatch</code></td>
+<td>显示匹配括号</td>
+</tr>
+<tr>
+<td>隐藏匹配括号</td>
+<td><code>:set noshowmatch</code></td>
+<td>隐藏匹配括号</td>
+</tr>
+<tr>
+<td>显示搜索结果</td>
+<td><code>:set hlsearch</code></td>
+<td>显示搜索结果</td>
+</tr>
+<tr>
+<td>隐藏搜索结果</td>
+<td><code>:set nohlsearch</code></td>
+<td>隐藏搜索结果</td>
+</tr>
+<tr>
+<td>显示语法高亮</td>
+<td><code>:syntax on</code></td>
+<td>显示语法高亮</td>
+</tr>
+<tr>
+<td>隐藏语法高亮</td>
+<td><code>:syntax off</code></td>
+<td>隐藏语法高亮</td>
+</tr>
+<tr>
+<td>显示缩进线</td>
+<td><code>:set indentline</code></td>
+<td>显示缩进线</td>
+</tr>
+<tr>
+<td>隐藏缩进线</td>
+<td><code>:set noindentline</code></td>
+<td>隐藏缩进线</td>
+</tr>
+<tr>
+<td>显示折叠</td>
+<td><code>:set foldenable</code></td>
+<td>显示折叠</td>
+</tr>
+<tr>
+<td>隐藏折叠</td>
+<td><code>:set folddisable</code></td>
+<td>隐藏折叠</td>
+</tr>
+<tr>
+<td>打开折叠</td>
+<td><code>za</code></td>
+<td>打开折叠</td>
+</tr>
+<tr>
+<td>关闭折叠</td>
+<td><code>zc</code></td>
+<td>关闭折叠</td>
+</tr>
+<tr>
+<td>切换折叠</td>
+<td><code>zA</code></td>
+<td>切换折叠</td>
+</tr>
+<tr>
+<td>切换折叠</td>
+<td><code>zC</code></td>
+<td>切换折叠</td>
+</tr>
+<tr>
+<td>打开所有折叠</td>
+<td><code>zR</code></td>
+<td>打开所有折叠</td>
+</tr>
+<tr>
+<td>关闭所有折叠</td>
+<td><code>zM</code></td>
+<td>关闭所有折叠</td>
+</tr>
+<tr>
+<td>切换所有折叠</td>
+<td><code>zr</code></td>
+<td>切换所有折叠</td>
+</tr>
+<tr>
+<td>切换所有折叠</td>
+<td><code>zm</code></td>
+<td>切换所有折叠</td>
+</tr>
+<tr>
+<td>跳转到指定行</td>
+<td><code>:n</code></td>
+<td>跳转到第 <code>n</code> 行</td>
+</tr>
+</tbody></table>
+]]></content>
+  </entry>
+  <entry>
+    <title>计算机网络相关</title>
+    <url>/2025/11/12/myblog/</url>
+    <content><![CDATA[<h1 id="WLAN"><a href="#WLAN" class="headerlink" title="WLAN"></a>WLAN</h1><h2 id="IEEE-802-11"><a href="#IEEE-802-11" class="headerlink" title="-  IEEE 802.11"></a>-  IEEE 802.11</h2><p><font size=4> <b>1. 标准认识</b> </font><br>一系列<strong>无线局域网通信标准</strong>，用于规定<strong>无线网络物理层和MAC层</strong>技术规范</p>
+<p><font size=4> <b>2. 物理层技术</b> </font><br>包括多种<strong>扩频技术和调制方式</strong>以适应不同频段和传输速率要求，如:跳频扩频<br>（FHSS），正交频分复用（OFDM），直接序列扩频（DSSS)，多输入多输出（MIMO)</p>
+<p><font size=4> <b>3. MAC层技术</b> </font><br>负责<strong>媒体访问控制和数据链路层的传输控制</strong>，在发送数据前监听信道是否空闲</p>
+<p><font size=4> <b>4. 主要子协议与使用频段认识</b> </font><br>理论速率影响因素：<strong>信道宽带，调制方式，编码率，空间流数量，GI保护间隔，<br>数据子载波数和频段等。<strong>2.4GHz和5GHz频段属于</strong>免许可的ISM频段</strong>，为全球<br>通用频段，适用于高清视频流媒体，在线游戏，大型文件传输等高流量需求。</p>
+<p><strong>2.4GHz频段</strong>:穿透能力强，衰减小，覆盖范围大，适合宽阔区域或隔墙多的环境<br><strong>5GHz频段</strong>：数据传输率较高，穿透障碍物时衰减较大，覆盖范围较小，适合密集区域</p>
+<p>短距离下，AP和客户端会<strong>默认优先选择5GHz频段</strong>，但对应<strong>2.4Ghz信号强度更高<br>新一代WiFi如</strong>WiFi6E引入了6Ghz频段**来缓解频谱压力，提供更高带宽和更多信道</p>
+<h2 id="WLAN基础"><a href="#WLAN基础" class="headerlink" title="- WLAN基础"></a>- WLAN基础</h2><p><font size=4> <b>1. 基本概念术语</b></font><br><strong>STA(Station)</strong>:<strong>无线终端设备</strong>，如手机电脑等无线终端<br><strong>AC(Access Controller)</strong>:</p>
+]]></content>
+      <tags>
+        <tag>Internet</tag>
+      </tags>
+  </entry>
+</search>

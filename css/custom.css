@@ -1,0 +1,118 @@
+:root {
+  --mio-card-bg: rgba(12, 20, 34, 0.56);
+  --mio-card-border: rgba(168, 236, 255, 0.22);
+  --mio-text-glow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  --mio-accent: #63e6df;
+  --mio-accent-hot: #ff5e89;
+}
+
+body {
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+#page-header {
+  background-position: center;
+  background-size: cover;
+}
+
+#page-header::before {
+  background: linear-gradient(180deg, rgba(6, 12, 24, 0.32), rgba(6, 12, 24, 0.72));
+}
+
+#site-info {
+  text-shadow: var(--mio-text-glow);
+}
+
+#site-title {
+  font-weight: 800;
+}
+
+#site-subtitle {
+  letter-spacing: 0;
+}
+
+#recent-posts > .recent-post-item,
+.layout > div:first-child:not(.recent-posts),
+#aside-content .card-widget,
+#post,
+#page,
+#archive,
+#tag,
+#category {
+  background: var(--mio-card-bg);
+  border: 1px solid var(--mio-card-border);
+  border-radius: 8px;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(16px) saturate(130%);
+  -webkit-backdrop-filter: blur(16px) saturate(130%);
+}
+
+[data-theme='light'] #recent-posts > .recent-post-item,
+[data-theme='light'] .layout > div:first-child:not(.recent-posts),
+[data-theme='light'] #aside-content .card-widget,
+[data-theme='light'] #post,
+[data-theme='light'] #page,
+[data-theme='light'] #archive,
+[data-theme='light'] #tag,
+[data-theme='light'] #category {
+  background: rgba(248, 252, 255, 0.72);
+  border-color: rgba(82, 139, 161, 0.2);
+}
+
+#aside-content .card-info .author-info__name {
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+#aside-content .card-info .author-info__description {
+  color: var(--mio-accent);
+  line-height: 1.8;
+}
+
+#aside-content .card-widget.card-announcement .item-headline span,
+#aside-content .card-widget.card-categories .item-headline span,
+#aside-content .card-widget.card-tags .item-headline span {
+  color: var(--mio-accent);
+}
+
+a:hover,
+#nav a:hover,
+#recent-posts > .recent-post-item > .recent-post-info > .article-title:hover {
+  color: var(--mio-accent-hot);
+}
+
+figure.highlight,
+.highlight-tools {
+  border-radius: 8px;
+}
+
+figure.highlight {
+  border: 1px solid rgba(99, 230, 223, 0.14);
+}
+
+@media (max-width: 768px) {
+  #page-header.full_page {
+    height: 58vh;
+    min-height: 420px;
+  }
+
+  #site-title {
+    font-size: 2.15rem;
+  }
+
+  #site-subtitle {
+    font-size: 1rem;
+  }
+
+  #recent-posts > .recent-post-item,
+  #aside-content .card-widget,
+  #post,
+  #page,
+  #archive,
+  #tag,
+  #category {
+    border-radius: 8px;
+  }
+}

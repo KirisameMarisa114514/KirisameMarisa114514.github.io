@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>AI Agent 实验索引</title>
+    <url>/2026/07/16/ai-agent-lab-index/</url>
+    <content><![CDATA[<p>这个栏目用于记录 AI Agent、LLM 工程化和自动化工作流实验。</p>
+<h2 id="Agent"><a href="#Agent" class="headerlink" title="Agent"></a>Agent</h2><p>记录工具调用、任务分解、记忆、规划和多 Agent 协作。</p>
+<h2 id="LLM"><a href="#LLM" class="headerlink" title="LLM"></a>LLM</h2><p>记录模型使用、Prompt 设计、评测、RAG 和应用集成。</p>
+]]></content>
+      <categories>
+        <category>AI</category>
+        <category>Agent</category>
+        <category>LLM</category>
+      </categories>
+      <tags>
+        <tag>AI</tag>
+        <tag>Agent</tag>
+        <tag>LLM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>云原生实践索引</title>
+    <url>/2026/07/16/cloud-native-notes-index/</url>
+    <content><![CDATA[<p>这个栏目用于整理容器、集群和 CI&#x2F;CD 相关实践。</p>
+<h2 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h2><p>记录镜像构建、Compose 编排、网络、存储和容器排错。</p>
+<h2 id="Kubernetes"><a href="#Kubernetes" class="headerlink" title="Kubernetes"></a>Kubernetes</h2><p>记录集群组件、工作负载、服务发现、Ingress、存储和可观测性。</p>
+<h2 id="Jenkins"><a href="#Jenkins" class="headerlink" title="Jenkins"></a>Jenkins</h2><p>记录流水线、凭据管理、构建环境和自动化部署。</p>
+]]></content>
+      <categories>
+        <category>云原生</category>
+        <category>Docker</category>
+        <category>Kubernetes</category>
+        <category>Jenkins</category>
+      </categories>
+      <tags>
+        <tag>Docker</tag>
+        <tag>Kubernetes</tag>
+        <tag>Jenkins</tag>
+        <tag>DevOps</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ciallo～(∠・ω&lt; )⌒★</title>
+    <url>/2025/11/18/hello-world/</url>
+    <content><![CDATA[<h2 id="欢迎喵～"><a href="#欢迎喵～" class="headerlink" title="欢迎喵～"></a>欢迎喵～</h2>]]></content>
+  </entry>
+  <entry>
     <title>CTF Writeup 展示索引</title>
     <url>/2026/07/16/ctf-writeup-showcase/</url>
     <content><![CDATA[<p>这里作为 CTF Writeup 的展示入口，后续比赛复盘和题目分析可以按方向沉淀到对应分类。</p>
@@ -42,24 +86,6 @@
         <tag>Python</tag>
         <tag>Go</tag>
         <tag>Development</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>AI Agent 实验索引</title>
-    <url>/2026/07/16/ai-agent-lab-index/</url>
-    <content><![CDATA[<p>这个栏目用于记录 AI Agent、LLM 工程化和自动化工作流实验。</p>
-<h2 id="Agent"><a href="#Agent" class="headerlink" title="Agent"></a>Agent</h2><p>记录工具调用、任务分解、记忆、规划和多 Agent 协作。</p>
-<h2 id="LLM"><a href="#LLM" class="headerlink" title="LLM"></a>LLM</h2><p>记录模型使用、Prompt 设计、评测、RAG 和应用集成。</p>
-]]></content>
-      <categories>
-        <category>AI</category>
-        <category>Agent</category>
-        <category>LLM</category>
-      </categories>
-      <tags>
-        <tag>AI</tag>
-        <tag>Agent</tag>
-        <tag>LLM</tag>
       </tags>
   </entry>
   <entry>
@@ -609,11 +635,6 @@ td:nth-child(2) {
 ]]></content>
   </entry>
   <entry>
-    <title>Ciallo～(∠・ω&lt; )⌒★</title>
-    <url>/2025/11/18/hello-world/</url>
-    <content><![CDATA[<h2 id="欢迎喵～"><a href="#欢迎喵～" class="headerlink" title="欢迎喵～"></a>欢迎喵～</h2>]]></content>
-  </entry>
-  <entry>
     <title>计算机网络相关</title>
     <url>/2025/11/12/myblog/</url>
     <content><![CDATA[<h1 id="WLAN"><a href="#WLAN" class="headerlink" title="WLAN"></a>WLAN</h1><h2 id="IEEE-802-11"><a href="#IEEE-802-11" class="headerlink" title="-  IEEE 802.11"></a>-  IEEE 802.11</h2><p><font size=4> <b>1. 标准认识</b> </font><br>一系列<strong>无线局域网通信标准</strong>，用于规定<strong>无线网络物理层和MAC层</strong>技术规范</p>
@@ -626,27 +647,6 @@ td:nth-child(2) {
 ]]></content>
       <tags>
         <tag>Internet</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>云原生实践索引</title>
-    <url>/2026/07/16/cloud-native-notes-index/</url>
-    <content><![CDATA[<p>这个栏目用于整理容器、集群和 CI&#x2F;CD 相关实践。</p>
-<h2 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h2><p>记录镜像构建、Compose 编排、网络、存储和容器排错。</p>
-<h2 id="Kubernetes"><a href="#Kubernetes" class="headerlink" title="Kubernetes"></a>Kubernetes</h2><p>记录集群组件、工作负载、服务发现、Ingress、存储和可观测性。</p>
-<h2 id="Jenkins"><a href="#Jenkins" class="headerlink" title="Jenkins"></a>Jenkins</h2><p>记录流水线、凭据管理、构建环境和自动化部署。</p>
-]]></content>
-      <categories>
-        <category>云原生</category>
-        <category>Docker</category>
-        <category>Kubernetes</category>
-        <category>Jenkins</category>
-      </categories>
-      <tags>
-        <tag>Docker</tag>
-        <tag>Kubernetes</tag>
-        <tag>Jenkins</tag>
-        <tag>DevOps</tag>
       </tags>
   </entry>
 </search>

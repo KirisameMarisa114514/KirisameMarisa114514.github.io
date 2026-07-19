@@ -19,32 +19,6 @@
       </tags>
   </entry>
   <entry>
-    <title>云原生实践索引</title>
-    <url>/2026/07/16/cloud-native-notes-index/</url>
-    <content><![CDATA[<p>这个栏目用于整理容器、集群和 CI&#x2F;CD 相关实践。</p>
-<h2 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h2><p>记录镜像构建、Compose 编排、网络、存储和容器排错。</p>
-<h2 id="Kubernetes"><a href="#Kubernetes" class="headerlink" title="Kubernetes"></a>Kubernetes</h2><p>记录集群组件、工作负载、服务发现、Ingress、存储和可观测性。</p>
-<h2 id="Jenkins"><a href="#Jenkins" class="headerlink" title="Jenkins"></a>Jenkins</h2><p>记录流水线、凭据管理、构建环境和自动化部署。</p>
-]]></content>
-      <categories>
-        <category>云原生</category>
-        <category>Docker</category>
-        <category>Kubernetes</category>
-        <category>Jenkins</category>
-      </categories>
-      <tags>
-        <tag>Docker</tag>
-        <tag>Kubernetes</tag>
-        <tag>Jenkins</tag>
-        <tag>DevOps</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Ciallo～(∠・ω&lt; )⌒★</title>
-    <url>/2025/11/18/hello-world/</url>
-    <content><![CDATA[<h2 id="欢迎喵～"><a href="#欢迎喵～" class="headerlink" title="欢迎喵～"></a>欢迎喵～</h2>]]></content>
-  </entry>
-  <entry>
     <title>CTF Writeup 展示索引</title>
     <url>/2026/07/16/ctf-writeup-showcase/</url>
     <content><![CDATA[<p>这里作为 CTF Writeup 的展示入口，后续比赛复盘和题目分析可以按方向沉淀到对应分类。</p>
@@ -71,21 +45,44 @@
       </tags>
   </entry>
   <entry>
-    <title>开发笔记索引</title>
-    <url>/2026/07/16/development-notes-index/</url>
-    <content><![CDATA[<p>这个栏目用于整理开发语言、脚本工具和工程化实践。</p>
-<h2 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h2><p>记录自动化脚本、数据处理、安全工具和 Web 后端实践。</p>
-<h2 id="Go"><a href="#Go" class="headerlink" title="Go"></a>Go</h2><p>记录服务端开发、命令行工具、并发模型和云原生生态。</p>
+    <title>云原生实践索引</title>
+    <url>/2026/07/16/cloud-native-notes-index/</url>
+    <content><![CDATA[<p>这个栏目用于整理容器、集群和 CI&#x2F;CD 相关实践。</p>
+<h2 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h2><p>记录镜像构建、Compose 编排、网络、存储和容器排错。</p>
+<h2 id="Kubernetes"><a href="#Kubernetes" class="headerlink" title="Kubernetes"></a>Kubernetes</h2><p>记录集群组件、工作负载、服务发现、Ingress、存储和可观测性。</p>
+<h2 id="Jenkins"><a href="#Jenkins" class="headerlink" title="Jenkins"></a>Jenkins</h2><p>记录流水线、凭据管理、构建环境和自动化部署。</p>
 ]]></content>
       <categories>
-        <category>开发</category>
-        <category>Python</category>
-        <category>Go</category>
+        <category>云原生</category>
+        <category>Docker</category>
+        <category>Kubernetes</category>
+        <category>Jenkins</category>
       </categories>
       <tags>
-        <tag>Python</tag>
-        <tag>Go</tag>
-        <tag>Development</tag>
+        <tag>Docker</tag>
+        <tag>Kubernetes</tag>
+        <tag>Jenkins</tag>
+        <tag>DevOps</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ciallo～(∠・ω&lt; )⌒★</title>
+    <url>/2025/11/18/hello-world/</url>
+    <content><![CDATA[<h2 id="欢迎喵～"><a href="#欢迎喵～" class="headerlink" title="欢迎喵～"></a>欢迎喵～</h2>]]></content>
+  </entry>
+  <entry>
+    <title>计算机网络相关</title>
+    <url>/2025/11/12/myblog/</url>
+    <content><![CDATA[<h1 id="WLAN"><a href="#WLAN" class="headerlink" title="WLAN"></a>WLAN</h1><h2 id="IEEE-802-11"><a href="#IEEE-802-11" class="headerlink" title="-  IEEE 802.11"></a>-  IEEE 802.11</h2><p><font size=4> <b>1. 标准认识</b> </font><br>一系列<strong>无线局域网通信标准</strong>，用于规定<strong>无线网络物理层和MAC层</strong>技术规范</p>
+<p><font size=4> <b>2. 物理层技术</b> </font><br>包括多种<strong>扩频技术和调制方式</strong>以适应不同频段和传输速率要求，如:跳频扩频<br>（FHSS），正交频分复用（OFDM），直接序列扩频（DSSS)，多输入多输出（MIMO)</p>
+<p><font size=4> <b>3. MAC层技术</b> </font><br>负责<strong>媒体访问控制和数据链路层的传输控制</strong>，在发送数据前监听信道是否空闲</p>
+<p><font size=4> <b>4. 主要子协议与使用频段认识</b> </font><br>理论速率影响因素：<strong>信道宽带，调制方式，编码率，空间流数量，GI保护间隔，<br>数据子载波数和频段等。<strong>2.4GHz和5GHz频段属于</strong>免许可的ISM频段</strong>，为全球<br>通用频段，适用于高清视频流媒体，在线游戏，大型文件传输等高流量需求。</p>
+<p><strong>2.4GHz频段</strong>:穿透能力强，衰减小，覆盖范围大，适合宽阔区域或隔墙多的环境<br><strong>5GHz频段</strong>：数据传输率较高，穿透障碍物时衰减较大，覆盖范围较小，适合密集区域</p>
+<p>短距离下，AP和客户端会<strong>默认优先选择5GHz频段</strong>，但对应<strong>2.4Ghz信号强度更高<br>新一代WiFi如</strong>WiFi6E引入了6Ghz频段**来缓解频谱压力，提供更高带宽和更多信道</p>
+<h2 id="WLAN基础"><a href="#WLAN基础" class="headerlink" title="- WLAN基础"></a>- WLAN基础</h2><p><font size=4> <b>1. 基本概念术语</b></font><br><strong>STA(Station)</strong>:<strong>无线终端设备</strong>，如手机电脑等无线终端<br><strong>AC(Access Controller)</strong>:</p>
+]]></content>
+      <tags>
+        <tag>Internet</tag>
       </tags>
   </entry>
   <entry>
@@ -635,18 +632,21 @@ td:nth-child(2) {
 ]]></content>
   </entry>
   <entry>
-    <title>计算机网络相关</title>
-    <url>/2025/11/12/myblog/</url>
-    <content><![CDATA[<h1 id="WLAN"><a href="#WLAN" class="headerlink" title="WLAN"></a>WLAN</h1><h2 id="IEEE-802-11"><a href="#IEEE-802-11" class="headerlink" title="-  IEEE 802.11"></a>-  IEEE 802.11</h2><p><font size=4> <b>1. 标准认识</b> </font><br>一系列<strong>无线局域网通信标准</strong>，用于规定<strong>无线网络物理层和MAC层</strong>技术规范</p>
-<p><font size=4> <b>2. 物理层技术</b> </font><br>包括多种<strong>扩频技术和调制方式</strong>以适应不同频段和传输速率要求，如:跳频扩频<br>（FHSS），正交频分复用（OFDM），直接序列扩频（DSSS)，多输入多输出（MIMO)</p>
-<p><font size=4> <b>3. MAC层技术</b> </font><br>负责<strong>媒体访问控制和数据链路层的传输控制</strong>，在发送数据前监听信道是否空闲</p>
-<p><font size=4> <b>4. 主要子协议与使用频段认识</b> </font><br>理论速率影响因素：<strong>信道宽带，调制方式，编码率，空间流数量，GI保护间隔，<br>数据子载波数和频段等。<strong>2.4GHz和5GHz频段属于</strong>免许可的ISM频段</strong>，为全球<br>通用频段，适用于高清视频流媒体，在线游戏，大型文件传输等高流量需求。</p>
-<p><strong>2.4GHz频段</strong>:穿透能力强，衰减小，覆盖范围大，适合宽阔区域或隔墙多的环境<br><strong>5GHz频段</strong>：数据传输率较高，穿透障碍物时衰减较大，覆盖范围较小，适合密集区域</p>
-<p>短距离下，AP和客户端会<strong>默认优先选择5GHz频段</strong>，但对应<strong>2.4Ghz信号强度更高<br>新一代WiFi如</strong>WiFi6E引入了6Ghz频段**来缓解频谱压力，提供更高带宽和更多信道</p>
-<h2 id="WLAN基础"><a href="#WLAN基础" class="headerlink" title="- WLAN基础"></a>- WLAN基础</h2><p><font size=4> <b>1. 基本概念术语</b></font><br><strong>STA(Station)</strong>:<strong>无线终端设备</strong>，如手机电脑等无线终端<br><strong>AC(Access Controller)</strong>:</p>
+    <title>开发笔记索引</title>
+    <url>/2026/07/16/development-notes-index/</url>
+    <content><![CDATA[<p>这个栏目用于整理开发语言、脚本工具和工程化实践。</p>
+<h2 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h2><p>记录自动化脚本、数据处理、安全工具和 Web 后端实践。</p>
+<h2 id="Go"><a href="#Go" class="headerlink" title="Go"></a>Go</h2><p>记录服务端开发、命令行工具、并发模型和云原生生态。</p>
 ]]></content>
+      <categories>
+        <category>开发</category>
+        <category>Python</category>
+        <category>Go</category>
+      </categories>
       <tags>
-        <tag>Internet</tag>
+        <tag>Python</tag>
+        <tag>Go</tag>
+        <tag>Development</tag>
       </tags>
   </entry>
 </search>

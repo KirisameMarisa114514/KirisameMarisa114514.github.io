@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>开发笔记索引</title>
+    <url>/2026/07/16/development-notes-index/</url>
+    <content><![CDATA[<p>这个栏目用于整理开发语言、脚本工具和工程化实践。</p>
+<h2 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h2><p>记录自动化脚本、数据处理、安全工具和 Web 后端实践。</p>
+<h2 id="Go"><a href="#Go" class="headerlink" title="Go"></a>Go</h2><p>记录服务端开发、命令行工具、并发模型和云原生生态。</p>
+]]></content>
+      <categories>
+        <category>开发</category>
+        <category>Python</category>
+        <category>Go</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>Go</tag>
+        <tag>Development</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>AI Agent 实验索引</title>
     <url>/2026/07/16/ai-agent-lab-index/</url>
     <content><![CDATA[<p>这个栏目用于记录 AI Agent、LLM 工程化和自动化工作流实验。</p>
@@ -16,32 +34,6 @@
         <tag>AI</tag>
         <tag>Agent</tag>
         <tag>LLM</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CTF Writeup 展示索引</title>
-    <url>/2026/07/16/ctf-writeup-showcase/</url>
-    <content><![CDATA[<p>这里作为 CTF Writeup 的展示入口，后续比赛复盘和题目分析可以按方向沉淀到对应分类。</p>
-<h2 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h2><p>记录 Web 安全、漏洞利用、源码审计和渗透思路。</p>
-<h2 id="Pwn"><a href="#Pwn" class="headerlink" title="Pwn"></a>Pwn</h2><p>记录二进制漏洞利用、glibc、ROP、堆利用和调试过程。</p>
-<h2 id="Reverse"><a href="#Reverse" class="headerlink" title="Reverse"></a>Reverse</h2><p>记录逆向分析、算法还原、壳处理和符号恢复。</p>
-<h2 id="Misc"><a href="#Misc" class="headerlink" title="Misc"></a>Misc</h2><p>记录流量分析、取证、密码学杂项和隐写分析。</p>
-]]></content>
-      <categories>
-        <category>安全研究</category>
-        <category>CTF</category>
-        <category>Web</category>
-        <category>Pwn</category>
-        <category>Reverse</category>
-        <category>Misc</category>
-      </categories>
-      <tags>
-        <tag>CTF</tag>
-        <tag>Writeup</tag>
-        <tag>Web</tag>
-        <tag>Pwn</tag>
-        <tag>Reverse</tag>
-        <tag>Misc</tag>
       </tags>
   </entry>
   <entry>
@@ -71,6 +63,135 @@
     <content><![CDATA[<h2 id="欢迎喵～"><a href="#欢迎喵～" class="headerlink" title="欢迎喵～"></a>欢迎喵～</h2>]]></content>
   </entry>
   <entry>
+    <title>CTF Writeup 展示索引</title>
+    <url>/2026/07/16/ctf-writeup-showcase/</url>
+    <content><![CDATA[<p>这里作为 CTF Writeup 的展示入口，后续比赛复盘和题目分析可以按方向沉淀到对应分类。</p>
+<h2 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h2><p>记录 Web 安全、漏洞利用、源码审计和渗透思路。</p>
+<h2 id="Pwn"><a href="#Pwn" class="headerlink" title="Pwn"></a>Pwn</h2><p>记录二进制漏洞利用、glibc、ROP、堆利用和调试过程。</p>
+<h2 id="Reverse"><a href="#Reverse" class="headerlink" title="Reverse"></a>Reverse</h2><p>记录逆向分析、算法还原、壳处理和符号恢复。</p>
+<h2 id="Misc"><a href="#Misc" class="headerlink" title="Misc"></a>Misc</h2><p>记录流量分析、取证、密码学杂项和隐写分析。</p>
+]]></content>
+      <categories>
+        <category>安全研究</category>
+        <category>CTF</category>
+        <category>Web</category>
+        <category>Pwn</category>
+        <category>Reverse</category>
+        <category>Misc</category>
+      </categories>
+      <tags>
+        <tag>CTF</tag>
+        <tag>Writeup</tag>
+        <tag>Web</tag>
+        <tag>Pwn</tag>
+        <tag>Reverse</tag>
+        <tag>Misc</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>FastAPI + psutil + Chart.js：轻量系统监控仪表盘容器化</title>
+    <url>/2026/07/19/fastapi-system-monitor-dashboard/</url>
+    <content><![CDATA[<p>这是一个基于 FastAPI、psutil 和 Chart.js 的轻量系统监控项目。后端负责采集 CPU、内存、磁盘、网络和进程数据，前端定时请求 REST API，再将数据绘制成动态图表。</p>
+<h2 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h2><figure class="highlight text"><table><tr><td class="code"><pre><span class="line">monitor/</span><br><span class="line">├── app/</span><br><span class="line">│   ├── app.py</span><br><span class="line">│   ├── collector.py</span><br><span class="line">│   └── api/routes.py</span><br><span class="line">├── static/index.html</span><br><span class="line">├── requirements.txt</span><br><span class="line">├── Dockerfile</span><br><span class="line">└── docker-compose.yml</span><br></pre></td></tr></table></figure>
+
+<p>依赖非常精简：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">fastapi</span><br><span class="line">uvicorn</span><br><span class="line">psutil</span><br></pre></td></tr></table></figure>
+
+<p>FastAPI 同时提供 API 和静态页面，因此不需要再单独启动一个前端开发服务器。</p>
+<h2 id="API-设计"><a href="#API-设计" class="headerlink" title="API 设计"></a>API 设计</h2><table>
+<thead>
+<tr>
+<th>路径</th>
+<th>数据</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>/api/cpu</code></td>
+<td>逻辑核心数、物理核心数、CPU 使用率</td>
+</tr>
+<tr>
+<td><code>/api/memory</code></td>
+<td>总内存、已用内存、可用内存、使用率</td>
+</tr>
+<tr>
+<td><code>/api/disks</code></td>
+<td>分区、挂载点、文件系统与使用率</td>
+</tr>
+<tr>
+<td><code>/api/network</code></td>
+<td>累计流量与上传、下载速度</td>
+</tr>
+<tr>
+<td><code>/api/processes</code></td>
+<td>按 CPU 排序的进程列表</td>
+</tr>
+</tbody></table>
+<p>主应用挂载静态目录并返回首页：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">app = FastAPI()</span><br><span class="line">app.mount(<span class="string">&quot;/static&quot;</span>, StaticFiles(directory=<span class="string">&quot;static&quot;</span>), name=<span class="string">&quot;static&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.get(<span class="params"><span class="string">&quot;/&quot;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">index</span>():</span><br><span class="line">    <span class="keyword">return</span> FileResponse(<span class="string">&quot;static/index.html&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>这种结构适合小型仪表盘：部署单一、跨域问题少，也容易打包进一个容器。</p>
+<h2 id="用-psutil-采集系统指标"><a href="#用-psutil-采集系统指标" class="headerlink" title="用 psutil 采集系统指标"></a>用 psutil 采集系统指标</h2><p>CPU 和内存数据可以直接读取：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">get_cpu</span>():</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        <span class="string">&quot;逻辑核心数&quot;</span>: psutil.cpu_count(logical=<span class="literal">True</span>),</span><br><span class="line">        <span class="string">&quot;物理核心数&quot;</span>: psutil.cpu_count(logical=<span class="literal">False</span>),</span><br><span class="line">        <span class="string">&quot;CPU使用率&quot;</span>: psutil.cpu_percent(interval=<span class="number">0.2</span>),</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>网络速度则需要做两次采样：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">第一次读取累计字节数</span><br><span class="line">        ↓ 等待固定时间</span><br><span class="line">第二次读取累计字节数</span><br><span class="line">        ↓</span><br><span class="line">两次差值 ÷ 采样时间 = 传输速度</span><br></pre></td></tr></table></figure>
+
+<p>进程 CPU 使用率同样需要预热采样，否则第一次调用通常得到 0。项目先遍历进程触发采样，短暂等待后再读取并排序。</p>
+<h2 id="前端可视化"><a href="#前端可视化" class="headerlink" title="前端可视化"></a>前端可视化</h2><p>前端使用 Chart.js 展示：</p>
+<ul>
+<li>CPU 使用率折线图；</li>
+<li>内存占用饼图；</li>
+<li>网络上传与下载曲线；</li>
+<li>可搜索、可排序的进程表格；</li>
+<li>深色模式和响应式卡片布局。</li>
+</ul>
+<p>前端轮询简单直观，但请求过密会增加采样开销。进一步优化时，可以让后端在后台统一采样，再通过 WebSocket 或 Server-Sent Events 推送给多个客户端。</p>
+<h2 id="Docker-化"><a href="#Docker-化" class="headerlink" title="Docker 化"></a>Docker 化</h2><p>镜像基于 <code>python:3.12-slim</code>：</p>
+<figure class="highlight dockerfile"><table><tr><td class="code"><pre><span class="line"><span class="keyword">FROM</span> python:<span class="number">3.12</span>-slim</span><br><span class="line"></span><br><span class="line"><span class="keyword">WORKDIR</span><span class="language-bash"> /app</span></span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> app/ ./app/</span></span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> static/ ./static/</span></span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> requirements.txt ./</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">RUN</span><span class="language-bash"> pip install --no-cache-dir -r requirements.txt</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">EXPOSE</span> <span class="number">1000</span></span><br><span class="line"><span class="keyword">CMD</span><span class="language-bash"> [<span class="string">&quot;uvicorn&quot;</span>, <span class="string">&quot;app.app:app&quot;</span>, <span class="string">&quot;--host&quot;</span>, <span class="string">&quot;0.0.0.0&quot;</span>, <span class="string">&quot;--port&quot;</span>, <span class="string">&quot;1000&quot;</span>]</span></span><br></pre></td></tr></table></figure>
+
+<p>Compose 只需要构建镜像并映射端口：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">monitor:</span></span><br><span class="line">    <span class="attr">build:</span> <span class="string">.</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">system_monitor</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;1000:1000&quot;</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br></pre></td></tr></table></figure>
+
+<p>启动命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker compose up -d --build</span><br><span class="line">docker compose ps</span><br></pre></td></tr></table></figure>
+
+<p>访问：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">http://127.0.0.1:1000/</span><br></pre></td></tr></table></figure>
+
+<h2 id="容器监控的边界"><a href="#容器监控的边界" class="headerlink" title="容器监控的边界"></a>容器监控的边界</h2><p>默认情况下，容器中的 psutil 主要看到容器自己的进程和命名空间，它不天然等于“完整宿主机监控”。如果希望读取宿主机的全部进程、磁盘和网络信息，需要额外挂载 <code>/proc</code>、使用宿主机 PID 命名空间，或把采集器直接运行在宿主机。</p>
+<p>这些方式会提高权限和攻击面，因此不能只为了数据更完整就盲目使用 <code>privileged: true</code>。更稳妥的选择是：</p>
+<ol>
+<li>明确需要哪些指标；</li>
+<li>只挂载必要的只读目录；</li>
+<li>为监控页面增加认证；</li>
+<li>不把进程列表直接暴露到公网；</li>
+<li>为采集接口增加超时、缓存和访问频率限制。</li>
+</ol>
+<h2 id="后续改进"><a href="#后续改进" class="headerlink" title="后续改进"></a>后续改进</h2><ul>
+<li>加入磁盘 IO、温度和 GPU 指标；</li>
+<li>使用 WebSocket 推送；</li>
+<li>为历史数据接入 SQLite、Prometheus 或时序数据库；</li>
+<li>增加登录认证和反向代理；</li>
+<li>区分容器指标与宿主机指标；</li>
+<li>为异常阈值增加告警。</li>
+</ul>
+<p>这个项目让我把 Python 数据采集、REST API、前端可视化和容器部署串成了一条完整链路，也更清楚地理解了容器隔离对监控数据的影响。</p>
+]]></content>
+      <categories>
+        <category>开发</category>
+        <category>云原生</category>
+        <category>Python</category>
+        <category>Docker</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>Docker</tag>
+        <tag>FastAPI</tag>
+        <tag>psutil</tag>
+        <tag>Chart.js</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>计算机网络相关</title>
     <url>/2025/11/12/myblog/</url>
     <content><![CDATA[<h1 id="WLAN"><a href="#WLAN" class="headerlink" title="WLAN"></a>WLAN</h1><h2 id="IEEE-802-11"><a href="#IEEE-802-11" class="headerlink" title="-  IEEE 802.11"></a>-  IEEE 802.11</h2><p><font size=4> <b>1. 标准认识</b> </font><br>一系列<strong>无线局域网通信标准</strong>，用于规定<strong>无线网络物理层和MAC层</strong>技术规范</p>
@@ -83,6 +204,123 @@
 ]]></content>
       <tags>
         <tag>Internet</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>从 Hexo 到 GitHub Pages：Butterfly 二次元博客搭建与动效实践</title>
+    <url>/2026/07/19/hexo-butterfly-github-pages/</url>
+    <content><![CDATA[<p>这次把一个已经初始化好的 Hexo 站点改造成了更符合个人风格的二次元技术博客。目标不是反复更换主题，而是在保留文章和部署流程的前提下，把主题配置、静态资源和自定义效果整理成一套可维护的结构。</p>
+<h2 id="当前技术栈"><a href="#当前技术栈" class="headerlink" title="当前技术栈"></a>当前技术栈</h2><table>
+<thead>
+<tr>
+<th>模块</th>
+<th>方案</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>静态站点生成器</td>
+<td>Hexo 8.1.2</td>
+</tr>
+<tr>
+<td>博客主题</td>
+<td>Butterfly 5.5.5</td>
+</tr>
+<tr>
+<td>页面托管</td>
+<td>GitHub Pages</td>
+</tr>
+<tr>
+<td>搜索</td>
+<td>hexo-generator-searchdb</td>
+</tr>
+<tr>
+<td>字数统计</td>
+<td>hexo-wordcount</td>
+</tr>
+<tr>
+<td>自定义样式</td>
+<td>原生 CSS</td>
+</tr>
+<tr>
+<td>页面动效</td>
+<td>Canvas + requestAnimationFrame</td>
+</tr>
+</tbody></table>
+<p>站点源文件集中在以下目录：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">myblog/</span><br><span class="line">├── _config.yml</span><br><span class="line">├── _config.butterfly.yml</span><br><span class="line">├── source/</span><br><span class="line">│   ├── _posts/</span><br><span class="line">│   ├── css/custom.css</span><br><span class="line">│   ├── img/</span><br><span class="line">│   └── js/</span><br><span class="line">└── themes/butterfly/</span><br></pre></td></tr></table></figure>
+
+<p>其中 <code>source</code> 才是长期维护的源目录，<code>public</code> 是每次构建生成的结果。头像、封面或脚本如果只放在 <code>public</code>，执行 <code>hexo clean</code> 后就会消失。</p>
+<h2 id="用站点级配置覆盖主题"><a href="#用站点级配置覆盖主题" class="headerlink" title="用站点级配置覆盖主题"></a>用站点级配置覆盖主题</h2><p>Butterfly 支持站点根目录下的 <code>_config.butterfly.yml</code>。头像、导航、背景、文章卡片和搜索等个性化配置放在这里，比直接修改主题模板更容易升级。</p>
+<p>例如头像配置：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">avatar:</span></span><br><span class="line">  <span class="attr">img:</span> <span class="string">/img/avatar.jpg</span></span><br><span class="line">  <span class="attr">effect:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>站点图片对应磁盘路径：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">source/img/avatar.jpg</span><br></pre></td></tr></table></figure>
+
+<p>页面中使用 <code>/img/avatar.jpg</code>，Hexo 构建时会把它复制到 <code>public/img/avatar.jpg</code>。</p>
+<h2 id="轻量樱花动画"><a href="#轻量樱花动画" class="headerlink" title="轻量樱花动画"></a>轻量樱花动画</h2><p>樱花效果没有引入大型粒子库，而是通过一个固定定位的 Canvas 绘制：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">source/js/sakura.js</span><br></pre></td></tr></table></figure>
+
+<p>每朵樱花都拥有随机的大小、下落速度、摆动幅度、旋转速度和透明度。桌面端与移动端使用不同的粒子上限，并将设备像素比限制在 2 以内，避免高分屏无意义地放大绘制成本。</p>
+<p>关键交互属性是：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">position</span>: fixed;</span><br><span class="line"><span class="attribute">pointer-events</span>: none;</span><br><span class="line"><span class="attribute">z-index</span>: <span class="number">10</span>;</span><br></pre></td></tr></table></figure>
+
+<p>这样画布覆盖整个窗口，却不会挡住链接、按钮、搜索框和文章选择操作。</p>
+<h2 id="点击爱心、星光与鼠标拖尾"><a href="#点击爱心、星光与鼠标拖尾" class="headerlink" title="点击爱心、星光与鼠标拖尾"></a>点击爱心、星光与鼠标拖尾</h2><p>第二层 Canvas 负责点击和指针移动效果：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">source/js/cursor-effects.js</span><br></pre></td></tr></table></figure>
+
+<p>每次点击会随机生成爱心或五角星。鼠标拖尾使用时间和距离双重节流：</p>
+<ul>
+<li>最短生成间隔为 32 ms；</li>
+<li>指针至少移动 8 px 才创建新粒子；</li>
+<li>粒子总数最多为 96；</li>
+<li>没有活动粒子时停止 <code>requestAnimationFrame</code>；</li>
+<li>触摸设备保留点击效果，但关闭连续拖尾。</li>
+</ul>
+<p>两段脚本通过 Butterfly 的 <code>inject.head</code> 加载：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">inject:</span></span><br><span class="line">  <span class="attr">head:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;script</span> <span class="string">defer</span> <span class="string">src=&quot;/js/sakura.js&quot;&gt;&lt;/script&gt;</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;script</span> <span class="string">defer</span> <span class="string">src=&quot;/js/cursor-effects.js&quot;&gt;&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>使用 <code>defer</code> 可以避免脚本阻塞 HTML 解析。</p>
+<h2 id="本地构建与验证"><a href="#本地构建与验证" class="headerlink" title="本地构建与验证"></a>本地构建与验证</h2><p>每次修改配置、文章或静态资源后，执行：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npx hexo clean</span><br><span class="line">npx hexo generate</span><br><span class="line">npx hexo server</span><br></pre></td></tr></table></figure>
+
+<p>然后访问：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">http://127.0.0.1:4000/</span><br></pre></td></tr></table></figure>
+
+<p>除了查看页面，还应确认：</p>
+<ol>
+<li>浏览器控制台没有 JavaScript 异常；</li>
+<li>首页和文章页都能加载自定义脚本；</li>
+<li>Canvas 的 <code>pointer-events</code> 为 <code>none</code>；</li>
+<li>移动端布局没有横向滚动；</li>
+<li>图片路径返回 HTTP 200。</li>
+</ol>
+<h2 id="部署到-GitHub-Pages"><a href="#部署到-GitHub-Pages" class="headerlink" title="部署到 GitHub Pages"></a>部署到 GitHub Pages</h2><p>站点使用 <code>hexo-deployer-git</code> 部署：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npx hexo clean</span><br><span class="line">npx hexo generate</span><br><span class="line">npx hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>部署完成不等于页面立即更新。GitHub Pages 和 CDN 可能需要几十秒传播，因此我会分别检查首页和新增静态资源是否返回 200，并用新查询参数绕过旧缓存。</p>
+<h2 id="这次实践的收获"><a href="#这次实践的收获" class="headerlink" title="这次实践的收获"></a>这次实践的收获</h2><p>这次改造最重要的并不是增加了多少动画，而是把职责划分清楚：</p>
+<ul>
+<li>文章只放在 <code>source/_posts</code>；</li>
+<li>图片和脚本只放在 <code>source</code>；</li>
+<li>主题个性化优先使用 <code>_config.butterfly.yml</code>；</li>
+<li>修改前先备份，修改后用构建和浏览器共同验证；</li>
+<li>动画要有粒子上限、移动端降级和后台暂停机制；</li>
+<li><code>public</code> 可以随时重新生成，不能作为唯一素材目录。</li>
+</ul>
+<p>有了这套结构，后续无论增加 Live2D、音乐播放器还是新的文章栏目，都不需要破坏主题核心文件。</p>
+]]></content>
+      <categories>
+        <category>开发</category>
+        <category>Hexo</category>
+        <category>Frontend</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Butterfly</tag>
+        <tag>GitHub Pages</tag>
+        <tag>JavaScript</tag>
+        <tag>Frontend</tag>
       </tags>
   </entry>
   <entry>
@@ -632,21 +870,179 @@ td:nth-child(2) {
 ]]></content>
   </entry>
   <entry>
-    <title>开发笔记索引</title>
-    <url>/2026/07/16/development-notes-index/</url>
-    <content><![CDATA[<p>这个栏目用于整理开发语言、脚本工具和工程化实践。</p>
-<h2 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h2><p>记录自动化脚本、数据处理、安全工具和 Web 后端实践。</p>
-<h2 id="Go"><a href="#Go" class="headerlink" title="Go"></a>Go</h2><p>记录服务端开发、命令行工具、并发模型和云原生生态。</p>
+    <title>Docker Compose 部署 OpenList：持久化配置与本地目录挂载</title>
+    <url>/2026/07/19/openlist-docker-compose-deployment/</url>
+    <content><![CDATA[<p>OpenList 可以把不同来源的文件统一组织到一个 Web 界面中。这次实践使用 Docker Compose 部署 AIO 镜像，并把配置、运行数据和实际文件目录分开挂载，便于升级与备份。</p>
+<h2 id="当前部署结构"><a href="#当前部署结构" class="headerlink" title="当前部署结构"></a>当前部署结构</h2><p>运行环境使用：</p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>当前配置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>镜像</td>
+<td><code>openlistteam/openlist:v4.1.9-aio</code></td>
+</tr>
+<tr>
+<td>容器名</td>
+<td><code>openlist</code></td>
+</tr>
+<tr>
+<td>Web 端口</td>
+<td><code>5244:5244</code></td>
+</tr>
+<tr>
+<td>配置目录</td>
+<td><code>./config:/opt/openlist/config</code></td>
+</tr>
+<tr>
+<td>数据目录</td>
+<td><code>./data:/opt/openlist/data</code></td>
+</tr>
+<tr>
+<td>文件目录</td>
+<td><code>./downloads:/data</code></td>
+</tr>
+</tbody></table>
+<p>对应的 Compose 核心配置如下：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">openlist:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">openlistteam/openlist:v4.1.9-aio</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">openlist</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;5244:5244&quot;</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./config:/opt/openlist/config</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./data:/opt/openlist/data</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./downloads:/data</span></span><br></pre></td></tr></table></figure>
+
+<p>这里没有把所有内容塞进一个目录，而是有意拆成三个层次。</p>
+<h2 id="为什么要拆分挂载"><a href="#为什么要拆分挂载" class="headerlink" title="为什么要拆分挂载"></a>为什么要拆分挂载</h2><h3 id="config"><a href="#config" class="headerlink" title="config"></a>config</h3><p><code>config</code> 保存程序级配置。把它持久化后，重建容器时不需要重新调整基础运行参数。</p>
+<h3 id="data"><a href="#data" class="headerlink" title="data"></a>data</h3><p><code>data</code> 保存数据库、日志和 OpenList 自身的运行状态，是最需要备份的部分。数据库正在写入时不应直接随意复制；更稳妥的做法是先停止容器，或使用数据库支持的一致性备份方式。</p>
+<h3 id="downloads"><a href="#downloads" class="headerlink" title="downloads"></a>downloads</h3><p><code>downloads</code> 是真正存放用户文件的宿主机目录，在容器内映射为 <code>/data</code>。OpenList 后台添加“本地存储”时，应填写容器看到的 <code>/data</code>，而不是宿主机路径。</p>
+<p>这也是容器挂载最容易混淆的地方：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">宿主机路径                         容器内路径</span><br><span class="line">$HOME/project/Openlist/downloads      -&gt;  /data</span><br></pre></td></tr></table></figure>
+
+<p>Web 管理界面运行在容器内部，因此它只能理解右侧路径。</p>
+<h2 id="启动和查看状态"><a href="#启动和查看状态" class="headerlink" title="启动和查看状态"></a>启动和查看状态</h2><p>进入 Compose 文件所在目录后：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker compose pull</span><br><span class="line">docker compose up -d</span><br><span class="line">docker compose ps</span><br></pre></td></tr></table></figure>
+
+<p>查看最近日志：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker compose logs --<span class="built_in">tail</span> 100 openlist</span><br></pre></td></tr></table></figure>
+
+<p>本机访问地址：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">http://127.0.0.1:5244/</span><br></pre></td></tr></table></figure>
+
+<p>如果从其他设备访问，需要确认防火墙和局域网访问策略，而不是直接把管理端口暴露到公网。</p>
+<h2 id="添加本地存储时的检查项"><a href="#添加本地存储时的检查项" class="headerlink" title="添加本地存储时的检查项"></a>添加本地存储时的检查项</h2><ol>
+<li>驱动选择“本地存储”；</li>
+<li>挂载路径使用站点中的虚拟路径；</li>
+<li>根文件夹路径填写容器内的 <code>/data</code>；</li>
+<li>检查目录的读取和写入权限；</li>
+<li>不要把管理令牌、密码或数据库文件写进博客和公开仓库。</li>
+</ol>
+<p>权限问题不建议通过整个项目递归 <code>777</code> 来长期解决。更合适的方式是确认容器运行用户，再为对应目录设置所有者和最小可用权限。</p>
+<h2 id="升级策略"><a href="#升级策略" class="headerlink" title="升级策略"></a>升级策略</h2><p>升级前先记录当前镜像版本，并备份 <code>config</code> 与 <code>data</code>：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker compose down</span><br><span class="line"><span class="comment"># 在这里执行自己的备份操作</span></span><br><span class="line">docker compose pull</span><br><span class="line">docker compose up -d</span><br></pre></td></tr></table></figure>
+
+<p>升级后至少验证：</p>
+<ul>
+<li>首页可以打开；</li>
+<li>管理员能够登录；</li>
+<li>存储列表正常；</li>
+<li><code>/data</code> 下的目录可以浏览；</li>
+<li>上传、下载和预览符合预期；</li>
+<li>日志中没有反复重启或数据库错误。</li>
+</ul>
+<h2 id="这次实践的收获"><a href="#这次实践的收获" class="headerlink" title="这次实践的收获"></a>这次实践的收获</h2><p>OpenList 的部署命令并不复杂，真正需要理解的是“宿主机、容器和应用配置”三层路径之间的关系。只要配置和数据已经持久化，容器本身就可以随时重建；而目录挂载、备份一致性和最小权限，才决定服务能否长期稳定运行。</p>
+]]></content>
+      <categories>
+        <category>云原生</category>
+        <category>Docker</category>
+      </categories>
+      <tags>
+        <tag>Docker</tag>
+        <tag>Docker Compose</tag>
+        <tag>OpenList</tag>
+        <tag>Self-hosted</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>WordPress + MySQL：用 Docker Compose 搭建双容器博客</title>
+    <url>/2026/07/19/wordpress-mysql-docker-compose/</url>
+    <content><![CDATA[<p>WordPress 是学习 Docker Compose 多容器编排的经典场景：Web 应用依赖数据库，两者有独立生命周期，又必须通过内部网络互相通信。</p>
+<p>这次部署使用两个服务：</p>
+<table>
+<thead>
+<tr>
+<th>服务</th>
+<th>镜像</th>
+<th>对外端口</th>
+<th>持久化</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>WordPress</td>
+<td><code>wordpress:latest</code></td>
+<td><code>8081:80</code></td>
+<td><code>/var/www/html</code></td>
+</tr>
+<tr>
+<td>MySQL</td>
+<td><code>mysql:8.0</code></td>
+<td>不对宿主机公开</td>
+<td><code>/var/lib/mysql</code></td>
+</tr>
+</tbody></table>
+<p>浏览器通过宿主机的 8081 端口访问 WordPress，而 WordPress 在 Compose 默认网络中通过服务名 <code>db</code> 连接 MySQL。</p>
+<h2 id="使用环境变量管理密码"><a href="#使用环境变量管理密码" class="headerlink" title="使用环境变量管理密码"></a>使用环境变量管理密码</h2><p>Compose 文件不应直接写入真实密码，更不能把密码发布到博客或 Git 仓库。可以创建一个不提交的 <code>.env</code>：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">WP_DB_NAME=wordpress</span><br><span class="line">WP_DB_USER=wordpress</span><br><span class="line">WP_DB_PASSWORD=请替换为强密码</span><br><span class="line">WP_DB_ROOT_PASSWORD=请替换为另一个强密码</span><br></pre></td></tr></table></figure>
+
+<p>然后在 Compose 中引用：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">db:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">mysql:8.0</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="attr">MYSQL_DATABASE:</span> <span class="string">$&#123;WP_DB_NAME&#125;</span></span><br><span class="line">      <span class="attr">MYSQL_USER:</span> <span class="string">$&#123;WP_DB_USER&#125;</span></span><br><span class="line">      <span class="attr">MYSQL_PASSWORD:</span> <span class="string">$&#123;WP_DB_PASSWORD&#125;</span></span><br><span class="line">      <span class="attr">MYSQL_ROOT_PASSWORD:</span> <span class="string">$&#123;WP_DB_ROOT_PASSWORD&#125;</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">db_data:/var/lib/mysql</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">wordpress:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">wordpress:latest</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">depends_on:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">db</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;8081:80&quot;</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="attr">WORDPRESS_DB_HOST:</span> <span class="string">db:3306</span></span><br><span class="line">      <span class="attr">WORDPRESS_DB_NAME:</span> <span class="string">$&#123;WP_DB_NAME&#125;</span></span><br><span class="line">      <span class="attr">WORDPRESS_DB_USER:</span> <span class="string">$&#123;WP_DB_USER&#125;</span></span><br><span class="line">      <span class="attr">WORDPRESS_DB_PASSWORD:</span> <span class="string">$&#123;WP_DB_PASSWORD&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">volumes:</span></span><br><span class="line">  <span class="attr">db_data:</span></span><br></pre></td></tr></table></figure>
+
+<p><code>WORDPRESS_DB_HOST</code> 使用的是 <code>db:3306</code>，不是 <code>localhost</code>。在 WordPress 容器内部，<code>localhost</code> 指向 WordPress 容器自己；Compose 服务名才是访问数据库容器的稳定地址。</p>
+<h2 id="启动流程"><a href="#启动流程" class="headerlink" title="启动流程"></a>启动流程</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker compose config</span><br><span class="line">docker compose up -d</span><br><span class="line">docker compose ps</span><br></pre></td></tr></table></figure>
+
+<p>先执行 <code>docker compose config</code> 可以提前发现 YAML 缩进、变量缺失和字段拼写问题。</p>
+<p>部署后访问：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">http://127.0.0.1:8081/</span><br></pre></td></tr></table></figure>
+
+<p>第一次打开会进入 WordPress 初始化页面。站点管理员密码与数据库密码用途不同，应分别设置并妥善保存。</p>
+<h2 id="数据持久化"><a href="#数据持久化" class="headerlink" title="数据持久化"></a>数据持久化</h2><p>MySQL 数据保存在命名卷 <code>db_data</code>。即使删除并重建数据库容器，命名卷仍可保留数据。</p>
+<p>查看卷：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker volume <span class="built_in">ls</span></span><br><span class="line">docker volume inspect docker-compose_db_data</span><br></pre></td></tr></table></figure>
+
+<p>WordPress 的程序、插件、主题和上传文件位于 <code>/var/www/html</code>。正式使用时也应为它配置明确的命名卷或绑定挂载，不能只依赖容器可写层。</p>
+<h2 id="服务依赖不等于服务就绪"><a href="#服务依赖不等于服务就绪" class="headerlink" title="服务依赖不等于服务就绪"></a>服务依赖不等于服务就绪</h2><p><code>depends_on</code> 只控制启动顺序，并不保证 MySQL 已经完成初始化。WordPress 可能在数据库启动初期短暂连接失败。</p>
+<p>更稳妥的做法是为 MySQL 添加健康检查：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">healthcheck:</span></span><br><span class="line">  <span class="attr">test:</span> [<span class="string">&quot;CMD&quot;</span>, <span class="string">&quot;mysqladmin&quot;</span>, <span class="string">&quot;ping&quot;</span>, <span class="string">&quot;-h&quot;</span>, <span class="string">&quot;localhost&quot;</span>]</span><br><span class="line">  <span class="attr">interval:</span> <span class="string">10s</span></span><br><span class="line">  <span class="attr">timeout:</span> <span class="string">5s</span></span><br><span class="line">  <span class="attr">retries:</span> <span class="number">10</span></span><br></pre></td></tr></table></figure>
+
+<p>还可以让应用在数据库未就绪时重试，而不是直接退出。</p>
+<h2 id="备份策略"><a href="#备份策略" class="headerlink" title="备份策略"></a>备份策略</h2><p>一个可恢复的 WordPress 备份至少包含两部分：</p>
+<ol>
+<li>MySQL 数据库；</li>
+<li><code>wp-content</code> 中的主题、插件和上传文件。</li>
+</ol>
+<p>数据库可以通过 <code>mysqldump</code> 导出，文件则使用归档或快照备份。只备份其中一部分，通常无法完整恢复站点。</p>
+<p>恢复演练同样重要。备份文件存在不代表一定可用，应该定期在独立环境中验证导入流程。</p>
+<h2 id="上线前的安全检查"><a href="#上线前的安全检查" class="headerlink" title="上线前的安全检查"></a>上线前的安全检查</h2><ul>
+<li>不把 MySQL 3306 端口直接暴露到公网；</li>
+<li>使用 <code>.env</code> 或更安全的密钥管理方式；</li>
+<li>固定镜像版本，避免 <code>latest</code> 带来不可控升级；</li>
+<li>使用反向代理提供 HTTPS；</li>
+<li>定期更新 WordPress、主题与插件；</li>
+<li>限制后台登录并启用强密码；</li>
+<li>为数据库和 <code>wp-content</code> 建立自动备份；</li>
+<li>查看容器日志和磁盘占用。</li>
+</ul>
+<h2 id="这次实践的收获"><a href="#这次实践的收获" class="headerlink" title="这次实践的收获"></a>这次实践的收获</h2><p>WordPress + MySQL 虽然只有两个容器，却覆盖了 Compose 中最核心的概念：服务发现、内部网络、环境变量、命名卷、启动依赖和数据备份。理解这些基础后，再扩展反向代理、Redis、自动证书和持续部署就会自然很多。</p>
 ]]></content>
       <categories>
         <category>开发</category>
-        <category>Python</category>
-        <category>Go</category>
+        <category>云原生</category>
+        <category>Docker</category>
+        <category>Web</category>
       </categories>
       <tags>
-        <tag>Python</tag>
-        <tag>Go</tag>
-        <tag>Development</tag>
+        <tag>Docker</tag>
+        <tag>Web</tag>
+        <tag>Docker Compose</tag>
+        <tag>WordPress</tag>
+        <tag>MySQL</tag>
       </tags>
   </entry>
 </search>

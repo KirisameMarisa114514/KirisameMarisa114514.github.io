@@ -4,6 +4,10 @@
   --mio-text-glow: 0 10px 30px rgba(0, 0, 0, 0.35);
   --mio-accent: #63e6df;
   --mio-accent-hot: #ff5e89;
+  --mio-footer-bg: rgba(8, 18, 30, 0.88);
+  --mio-footer-border: rgba(168, 236, 255, 0.12);
+  --mio-footer-text: rgba(232, 242, 248, 0.88);
+  --mio-footer-muted: rgba(190, 207, 219, 0.76);
 }
 
 body {
@@ -92,6 +96,54 @@ figure.highlight {
   border: 1px solid rgba(99, 230, 223, 0.14);
 }
 
+#footer {
+  background-color: var(--mio-footer-bg);
+  background-image: linear-gradient(
+    180deg,
+    rgba(10, 24, 40, 0.82) 0%,
+    rgba(5, 12, 22, 0.94) 100%
+  );
+  border-top: 1px solid var(--mio-footer-border);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.025),
+    0 -16px 42px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(10px) saturate(120%);
+  -webkit-backdrop-filter: blur(10px) saturate(120%);
+}
+
+#footer > * {
+  color: var(--mio-footer-text);
+}
+
+#footer .footer-other {
+  padding: 28px 20px;
+}
+
+#footer .footer-copyright {
+  line-height: 1.85;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.42);
+}
+
+#footer .copyright {
+  color: var(--mio-footer-text);
+}
+
+#footer .framework-info {
+  margin-top: 4px;
+  color: var(--mio-footer-muted);
+  font-size: 0.92em;
+  letter-spacing: 0.02em;
+}
+
+#footer a {
+  color: rgba(166, 232, 240, 0.92);
+}
+
+#footer a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 14px rgba(99, 230, 223, 0.5);
+}
+
 @media (max-width: 768px) {
   #page-header.full_page {
     height: 58vh;
@@ -114,5 +166,18 @@ figure.highlight {
   #tag,
   #category {
     border-radius: 8px;
+  }
+
+  #footer .footer-other {
+    padding: 22px 14px;
+  }
+
+  #footer .footer-copyright {
+    line-height: 1.75;
+  }
+
+  #footer .framework-info {
+    margin-top: 2px;
+    font-size: 0.88em;
   }
 }

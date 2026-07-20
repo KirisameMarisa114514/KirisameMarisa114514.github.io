@@ -1,0 +1,1566 @@
+<!DOCTYPE html><html lang="zh" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Vim快捷键 | mio's blog</title><meta name="author" content="mio"><meta name="copyright" content="mio"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="Vim 常用快捷键与命令手册 :root {     --vim-primary: #4f46e5;     --vim-primary-light: #eef2ff;     --vim-secondary: #0f766e;     --vim-text: #1f2937;     --vim-text-muted: #64748b;     --vim-border: #dbe3ef;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vim快捷键">
+<meta property="og:url" content="https://kirisamemarisa114514.github.io/2025/11/13/vim%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="mio&#39;s blog">
+<meta property="og:description" content="Vim 常用快捷键与命令手册 :root {     --vim-primary: #4f46e5;     --vim-primary-light: #eef2ff;     --vim-secondary: #0f766e;     --vim-text: #1f2937;     --vim-text-muted: #64748b;     --vim-border: #dbe3ef;">
+<meta property="og:locale">
+<meta property="og:image" content="https://kirisamemarisa114514.github.io/img/covers/vim%E7%AC%94%E8%AE%B0.jpg">
+<meta property="article:published_time" content="2025-11-13T12:24:55.000Z">
+<meta property="article:modified_time" content="2026-07-20T11:01:40.931Z">
+<meta property="article:author" content="mio">
+<meta property="article:tag" content="Internet">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://kirisamemarisa114514.github.io/img/covers/vim%E7%AC%94%E8%AE%B0.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Vim快捷键",
+  "url": "https://kirisamemarisa114514.github.io/2025/11/13/vim%E7%AC%94%E8%AE%B0/",
+  "image": "https://kirisamemarisa114514.github.io/img/covers/vim%E7%AC%94%E8%AE%B0.jpg",
+  "datePublished": "2025-11-13T12:24:55.000Z",
+  "dateModified": "2026-07-20T11:01:40.931Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "mio",
+      "url": "https://KirisameMarisa114514.github.io"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://kirisamemarisa114514.github.io/2025/11/13/vim%E7%AC%94%E8%AE%B0/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.5"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":2,"unescape":true,"pagination":{"enable":true,"hitsPerPage":8},"languages":{"hits_empty":"No results found for: ${query}","hits_stats":"${hits} articles found"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":520,"highlightFullpage":true,"highlightMacStyle":true},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: 'days',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Vim快捷键',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><script defer src="/js/sakura.js"></script><script defer src="/js/cursor-effects.js"></script><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.2"></head><body><div class="bg-animation" id="web_bg" style="background-image: url(/img/hero-mygo.png);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/ loading='lazy'></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">8</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">22</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">13</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/%E5%AE%89%E5%85%A8%E7%A0%94%E7%A9%B6/CTF/"><i class="fa-fw fas fa-flag"></i><span> CTF Writeup</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user-astronaut"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url(/img/covers/vim%E7%AC%94%E8%AE%B0.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src="/img/favicon.png" alt="Logo" loading='lazy'><span class="site-name">mio's blog</span></a><a class="nav-page-title" href="/"><span class="site-name">Vim快捷键</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  Back to Home</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/%E5%AE%89%E5%85%A8%E7%A0%94%E7%A9%B6/CTF/"><i class="fa-fw fas fa-flag"></i><span> CTF Writeup</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user-astronaut"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">Vim快捷键</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-11-13T12:24:55.000Z" title="Created 2025-11-13 20:24:55">2025-11-13</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2026-07-20T11:01:40.931Z" title="Updated 2026-07-20 19:01:40">2026-07-20</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word Count:</span><span class="word-count">4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading Time:</span><span>14mins</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="Vim-常用快捷键与命令手册"><a href="#Vim-常用快捷键与命令手册" class="headerlink" title="Vim 常用快捷键与命令手册"></a>Vim 常用快捷键与命令手册</h1><style>
+:root {
+    --vim-primary: #4f46e5;
+    --vim-primary-light: #eef2ff;
+    --vim-secondary: #0f766e;
+    --vim-text: #1f2937;
+    --vim-text-muted: #64748b;
+    --vim-border: #dbe3ef;
+    --vim-table-head: #4f46e5;
+    --vim-table-even: #f8fafc;
+    --vim-code-bg: #eef2ff;
+    --vim-code-text: #4338ca;
+    --vim-tip-bg: #ecfeff;
+    --vim-tip-border: #06b6d4;
+}
+
+body {
+    color: var(--vim-text);
+    line-height: 1.75;
+}
+
+h1 {
+    margin-bottom: 8px;
+    color: #172554;
+    font-size: 2em;
+    text-align: center;
+    border-bottom: 3px solid var(--vim-primary);
+    padding-bottom: 12px;
+}
+
+h2 {
+    margin-top: 36px;
+    padding: 8px 14px;
+    color: #1e293b;
+    font-size: 1.45em;
+    border-left: 5px solid var(--vim-primary);
+    background: linear-gradient(
+        90deg,
+        var(--vim-primary-light),
+        transparent
+    );
+    border-radius: 4px;
+}
+
+h3 {
+    margin-top: 24px;
+    color: #334155;
+    font-size: 1.15em;
+}
+
+table {
+    width: 100%;
+    margin: 16px 0 28px;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    border: 1px solid var(--vim-border);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+}
+
+th {
+    padding: 12px 14px;
+    color: #ffffff;
+    text-align: left;
+    background: var(--vim-table-head);
+    border-right: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+th:last-child {
+    border-right: none;
+}
+
+td {
+    padding: 11px 14px;
+    border-right: 1px solid var(--vim-border);
+    border-bottom: 1px solid var(--vim-border);
+    vertical-align: middle;
+}
+
+td:last-child {
+    border-right: none;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr:nth-child(even) {
+    background: var(--vim-table-even);
+}
+
+tbody tr:hover {
+    background: var(--vim-primary-light);
+    transition: background-color 0.18s ease;
+}
+
+code {
+    padding: 2px 7px;
+    color: var(--vim-code-text);
+    font-weight: 600;
+    white-space: nowrap;
+    background: var(--vim-code-bg);
+    border: 1px solid #c7d2fe;
+    border-radius: 5px;
+}
+
+blockquote {
+    margin: 16px 0 24px;
+    padding: 12px 16px;
+    color: #155e75;
+    background: var(--vim-tip-bg);
+    border-left: 5px solid var(--vim-tip-border);
+    border-radius: 6px;
+}
+
+@media (max-width: 768px) {
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    th,
+    td {
+        padding: 9px 11px;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --vim-primary-light: #1e1b4b;
+        --vim-text: #e2e8f0;
+        --vim-text-muted: #94a3b8;
+        --vim-border: #334155;
+        --vim-table-head: #4338ca;
+        --vim-table-even: #172033;
+        --vim-code-bg: #312e81;
+        --vim-code-text: #e0e7ff;
+    }
+
+    body {
+        color: var(--vim-text);
+    }
+
+    h1,
+    h2,
+    h3 {
+        color: #e2e8f0;
+    }
+
+    tbody tr:hover {
+        background: #252356;
+    }
+}
+</style>
+
+<blockquote>
+<p>**使用说明：**以下快捷键默认在 Vim 的普通模式下执行。<br><code>Ctrl + x</code> 表示按住 <code>Ctrl</code>，再按下 <code>x</code>。</p>
+</blockquote>
+<hr>
+<h2 id="1-模式切换"><a href="#1-模式切换" class="headerlink" title="1. 模式切换"></a>1. 模式切换</h2><h3 id="1-1-进入不同模式"><a href="#1-1-进入不同模式" class="headerlink" title="1.1 进入不同模式"></a>1.1 进入不同模式</h3><table>
+<thead>
+<tr>
+<th>模式</th>
+<th>快捷键</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>普通模式</td>
+<td><code>Esc</code></td>
+<td>返回普通模式，用于移动、复制、删除和执行命令</td>
+</tr>
+<tr>
+<td>插入模式</td>
+<td><code>i</code></td>
+<td>在光标前开始输入</td>
+</tr>
+<tr>
+<td>插入模式</td>
+<td><code>a</code></td>
+<td>在光标后开始输入</td>
+</tr>
+<tr>
+<td>插入模式</td>
+<td><code>o</code></td>
+<td>在当前行下方新建一行并输入</td>
+</tr>
+<tr>
+<td>插入模式</td>
+<td><code>O</code></td>
+<td>在当前行上方新建一行并输入</td>
+</tr>
+<tr>
+<td>可视模式</td>
+<td><code>v</code></td>
+<td>按字符选择文本</td>
+</tr>
+<tr>
+<td>可视行模式</td>
+<td><code>V</code></td>
+<td>按整行选择文本</td>
+</tr>
+<tr>
+<td>可视块模式</td>
+<td><code>Ctrl + v</code></td>
+<td>按矩形区域选择文本</td>
+</tr>
+<tr>
+<td>命令行模式</td>
+<td><code>:</code></td>
+<td>输入保存、退出、替换和设置命令</td>
+</tr>
+<tr>
+<td>搜索模式</td>
+<td><code>/</code></td>
+<td>从当前位置向下搜索</td>
+</tr>
+<tr>
+<td>反向搜索模式</td>
+<td><code>?</code></td>
+<td>从当前位置向上搜索</td>
+</tr>
+</tbody></table>
+<h3 id="1-2-退出当前模式"><a href="#1-2-退出当前模式" class="headerlink" title="1.2 退出当前模式"></a>1.2 退出当前模式</h3><table>
+<thead>
+<tr>
+<th>当前模式</th>
+<th>快捷键</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>插入模式</td>
+<td><code>Esc</code></td>
+<td>返回普通模式</td>
+</tr>
+<tr>
+<td>可视模式</td>
+<td><code>Esc</code></td>
+<td>取消选择并返回普通模式</td>
+</tr>
+<tr>
+<td>命令行模式</td>
+<td><code>Esc</code></td>
+<td>取消当前命令</td>
+</tr>
+<tr>
+<td>搜索模式</td>
+<td><code>Esc</code></td>
+<td>取消当前搜索输入</td>
+</tr>
+<tr>
+<td>任意编辑状态</td>
+<td><code>Ctrl + [</code></td>
+<td>效果通常与 <code>Esc</code> 相同</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="2-光标移动"><a href="#2-光标移动" class="headerlink" title="2. 光标移动"></a>2. 光标移动</h2><h3 id="2-1-基础移动"><a href="#2-1-基础移动" class="headerlink" title="2.1 基础移动"></a>2.1 基础移动</h3><table>
+<thead>
+<tr>
+<th>功能</th>
+<th>快捷键</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>向左移动</td>
+<td><code>h</code></td>
+<td>向左移动一个字符</td>
+</tr>
+<tr>
+<td>向下移动</td>
+<td><code>j</code></td>
+<td>向下移动一行</td>
+</tr>
+<tr>
+<td>向上移动</td>
+<td><code>k</code></td>
+<td>向上移动一行</td>
+</tr>
+<tr>
+<td>向右移动</td>
+<td><code>l</code></td>
+<td>向右移动一个字符</td>
+</tr>
+<tr>
+<td>移动到下一个单词</td>
+<td><code>w</code></td>
+<td>跳到下一个单词开头</td>
+</tr>
+<tr>
+<td>移动到上一个单词</td>
+<td><code>b</code></td>
+<td>跳到上一个单词开头</td>
+</tr>
+<tr>
+<td>移动到单词结尾</td>
+<td><code>e</code></td>
+<td>跳到当前或下一个单词末尾</td>
+</tr>
+</tbody></table>
+<h3 id="2-2-行与文件移动"><a href="#2-2-行与文件移动" class="headerlink" title="2.2 行与文件移动"></a>2.2 行与文件移动</h3><table>
+<thead>
+<tr>
+<th>功能</th>
+<th>快捷键</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>移动到行首</td>
+<td><code>0</code></td>
+<td>移动到当前行第一个字符</td>
+</tr>
+<tr>
+<td>移动到首个非空字符</td>
+<td><code>^</code></td>
+<td>跳过行首空格和缩进</td>
+</tr>
+<tr>
+<td>移动到行尾</td>
+<td><code>$</code></td>
+<td>移动到当前行末尾</td>
+</tr>
+<tr>
+<td>移动到文件开头</td>
+<td><code>gg</code></td>
+<td>跳到文件第一行</td>
+</tr>
+<tr>
+<td>移动到文件结尾</td>
+<td><code>G</code></td>
+<td>跳到文件最后一行</td>
+</tr>
+<tr>
+<td>跳转到指定行</td>
+<td><code>nG</code></td>
+<td>例如 <code>20G</code> 跳到第 20 行</td>
+</tr>
+<tr>
+<td>跳转到指定行</td>
+<td><code>:n</code></td>
+<td>例如 <code>:20</code> 跳到第 20 行</td>
+</tr>
+<tr>
+<td>跳转到匹配括号</td>
+<td><code>%</code></td>
+<td>在成对括号之间跳转</td>
+</tr>
+</tbody></table>
+<h3 id="2-3-页面滚动"><a href="#2-3-页面滚动" class="headerlink" title="2.3 页面滚动"></a>2.3 页面滚动</h3><table>
+<thead>
+<tr>
+<th>功能</th>
+<th>快捷键</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>向上滚动半页</td>
+<td><code>Ctrl + u</code></td>
+<td>向文件上方滚动半页</td>
+</tr>
+<tr>
+<td>向下滚动半页</td>
+<td><code>Ctrl + d</code></td>
+<td>向文件下方滚动半页</td>
+</tr>
+<tr>
+<td>向上滚动一页</td>
+<td><code>Ctrl + b</code></td>
+<td>向文件上方滚动一整页</td>
+</tr>
+<tr>
+<td>向下滚动一页</td>
+<td><code>Ctrl + f</code></td>
+<td>向文件下方滚动一整页</td>
+</tr>
+<tr>
+<td>光标移到屏幕顶部</td>
+<td><code>H</code></td>
+<td>跳到当前窗口顶部</td>
+</tr>
+<tr>
+<td>光标移到屏幕中间</td>
+<td><code>M</code></td>
+<td>跳到当前窗口中间</td>
+</tr>
+<tr>
+<td>光标移到屏幕底部</td>
+<td><code>L</code></td>
+<td>跳到当前窗口底部</td>
+</tr>
+<tr>
+<td>当前行置于屏幕顶部</td>
+<td><code>zt</code></td>
+<td>滚动窗口，使当前行位于顶部</td>
+</tr>
+<tr>
+<td>当前行置于屏幕中间</td>
+<td><code>zz</code></td>
+<td>滚动窗口，使当前行居中</td>
+</tr>
+<tr>
+<td>当前行置于屏幕底部</td>
+<td><code>zb</code></td>
+<td>滚动窗口，使当前行位于底部</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="3-文本插入与修改"><a href="#3-文本插入与修改" class="headerlink" title="3. 文本插入与修改"></a>3. 文本插入与修改</h2><h3 id="3-1-插入与替换"><a href="#3-1-插入与替换" class="headerlink" title="3.1 插入与替换"></a>3.1 插入与替换</h3><table>
+<thead>
+<tr>
+<th>功能</th>
+<th>快捷键</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>在光标前插入</td>
+<td><code>i</code></td>
+<td>进入插入模式</td>
+</tr>
+<tr>
+<td>在光标后插入</td>
+<td><code>a</code></td>
+<td>从光标后开始输入</td>
+</tr>
+<tr>
+<td>在行首插入</td>
+<td><code>I</code></td>
+<td>在当前行首个非空字符前输入</td>
+</tr>
+<tr>
+<td>在行尾插入</td>
+<td><code>A</code></td>
+<td>在当前行末尾输入</td>
+</tr>
+<tr>
+<td>下方新建一行</td>
+<td><code>o</code></td>
+<td>在当前行下方新建并编辑</td>
+</tr>
+<tr>
+<td>上方新建一行</td>
+<td><code>O</code></td>
+<td>在当前行上方新建并编辑</td>
+</tr>
+<tr>
+<td>替换单个字符</td>
+<td><code>r</code></td>
+<td>替换光标下的一个字符</td>
+</tr>
+<tr>
+<td>连续替换字符</td>
+<td><code>R</code></td>
+<td>进入替换模式</td>
+</tr>
+<tr>
+<td>修改当前单词</td>
+<td><code>cw</code></td>
+<td>删除到单词结尾并进入插入模式</td>
+</tr>
+<tr>
+<td>修改当前行</td>
+<td><code>cc</code></td>
+<td>清空当前行并进入插入模式</td>
+</tr>
+<tr>
+<td>修改到行尾</td>
+<td><code>C</code></td>
+<td>删除光标到行尾并进入插入模式</td>
+</tr>
+</tbody></table>
+<h3 id="3-2-删除操作"><a href="#3-2-删除操作" class="headerlink" title="3.2 删除操作"></a>3.2 删除操作</h3><table>
+<thead>
+<tr>
+<th>功能</th>
+<th>快捷键</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>删除当前字符</td>
+<td><code>x</code></td>
+<td>删除光标下的字符</td>
+</tr>
+<tr>
+<td>删除前一个字符</td>
+<td><code>X</code></td>
+<td>删除光标前的字符</td>
+</tr>
+<tr>
+<td>删除当前行</td>
+<td><code>dd</code></td>
+<td>删除整行</td>
+</tr>
+<tr>
+<td>删除多行</td>
+<td><code>ndd</code></td>
+<td>例如 <code>5dd</code> 删除 5 行</td>
+</tr>
+<tr>
+<td>删除到单词开头</td>
+<td><code>dw</code></td>
+<td>删除光标到下一个单词开头</td>
+</tr>
+<tr>
+<td>删除到单词结尾</td>
+<td><code>de</code></td>
+<td>删除光标到当前单词结尾</td>
+</tr>
+<tr>
+<td>删除到行尾</td>
+<td><code>D</code> 或 <code>d$</code></td>
+<td>删除光标到当前行末尾</td>
+</tr>
+<tr>
+<td>删除到行首</td>
+<td><code>d0</code></td>
+<td>删除光标到当前行开头</td>
+</tr>
+<tr>
+<td>删除到文件开头</td>
+<td><code>dgg</code></td>
+<td>删除光标到文件开头</td>
+</tr>
+<tr>
+<td>删除到文件结尾</td>
+<td><code>dG</code></td>
+<td>删除光标到文件结尾</td>
+</tr>
+</tbody></table>
+<h3 id="3-3-复制与粘贴"><a href="#3-3-复制与粘贴" class="headerlink" title="3.3 复制与粘贴"></a>3.3 复制与粘贴</h3><table>
+<thead>
+<tr>
+<th>功能</th>
+<th>快捷键</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>复制当前行</td>
+<td><code>yy</code></td>
+<td>复制整行</td>
+</tr>
+<tr>
+<td>复制多行</td>
+<td><code>nyy</code></td>
+<td>例如 <code>5yy</code> 复制 5 行</td>
+</tr>
+<tr>
+<td>复制单词</td>
+<td><code>yw</code></td>
+<td>复制到下一个单词开头</td>
+</tr>
+<tr>
+<td>复制到行尾</td>
+<td><code>y$</code></td>
+<td>复制光标到当前行末尾</td>
+</tr>
+<tr>
+<td>复制到行首</td>
+<td><code>y0</code></td>
+<td>复制光标到当前行开头</td>
+</tr>
+<tr>
+<td>复制到文件开头</td>
+<td><code>ygg</code></td>
+<td>复制光标到文件开头</td>
+</tr>
+<tr>
+<td>复制到文件结尾</td>
+<td><code>yG</code></td>
+<td>复制光标到文件结尾</td>
+</tr>
+<tr>
+<td>在光标后粘贴</td>
+<td><code>p</code></td>
+<td>在光标或当前行后粘贴</td>
+</tr>
+<tr>
+<td>在光标前粘贴</td>
+<td><code>P</code></td>
+<td>在光标或当前行前粘贴</td>
+</tr>
+</tbody></table>
+<h3 id="3-4-撤销与重复"><a href="#3-4-撤销与重复" class="headerlink" title="3.4 撤销与重复"></a>3.4 撤销与重复</h3><table>
+<thead>
+<tr>
+<th>功能</th>
+<th>快捷键</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>撤销操作</td>
+<td><code>u</code></td>
+<td>撤销最近一次修改</td>
+</tr>
+<tr>
+<td>重做操作</td>
+<td><code>Ctrl + r</code></td>
+<td>恢复被撤销的修改</td>
+</tr>
+<tr>
+<td>重复上次修改</td>
+<td><code>.</code></td>
+<td>再次执行最近一次修改</td>
+</tr>
+<tr>
+<td>合并下一行</td>
+<td><code>J</code></td>
+<td>将下一行连接到当前行</td>
+</tr>
+<tr>
+<td>重复命令</td>
+<td><code>n命令</code></td>
+<td>例如 <code>3dd</code>、<code>5yy</code>、<code>10j</code></td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="4-搜索与替换"><a href="#4-搜索与替换" class="headerlink" title="4. 搜索与替换"></a>4. 搜索与替换</h2><h3 id="4-1-搜索文本"><a href="#4-1-搜索文本" class="headerlink" title="4.1 搜索文本"></a>4.1 搜索文本</h3><table>
+<thead>
+<tr>
+<th>功能</th>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>向下搜索</td>
+<td><code>/文本</code></td>
+<td>输入后按 <code>Enter</code> 开始搜索</td>
+</tr>
+<tr>
+<td>向上搜索</td>
+<td><code>?文本</code></td>
+<td>从当前位置向上搜索</td>
+</tr>
+<tr>
+<td>下一个匹配项</td>
+<td><code>n</code></td>
+<td>按原搜索方向查找下一个</td>
+</tr>
+<tr>
+<td>上一个匹配项</td>
+<td><code>N</code></td>
+<td>按相反方向查找</td>
+</tr>
+<tr>
+<td>搜索当前单词</td>
+<td><code>*</code></td>
+<td>向下搜索光标所在单词</td>
+</tr>
+<tr>
+<td>反向搜索当前单词</td>
+<td><code>#</code></td>
+<td>向上搜索光标所在单词</td>
+</tr>
+<tr>
+<td>关闭搜索高亮</td>
+<td><code>:nohlsearch</code></td>
+<td>临时清除搜索结果高亮</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><code>n</code> 是“继续沿当前搜索方向”，<code>N</code> 是“反向查找”，并不是固定的下一个或上一个。</p>
+</blockquote>
+<h3 id="4-2-替换文本"><a href="#4-2-替换文本" class="headerlink" title="4.2 替换文本"></a>4.2 替换文本</h3><table>
+<thead>
+<tr>
+<th>功能</th>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>替换当前行首个匹配</td>
+<td><code>:s/old/new/</code></td>
+<td>只替换当前行第一个匹配</td>
+</tr>
+<tr>
+<td>替换当前行全部匹配</td>
+<td><code>:s/old/new/g</code></td>
+<td>替换当前行所有匹配</td>
+</tr>
+<tr>
+<td>替换全文全部匹配</td>
+<td><code>:%s/old/new/g</code></td>
+<td>替换整个文件</td>
+</tr>
+<tr>
+<td>全文替换并确认</td>
+<td><code>:%s/old/new/gc</code></td>
+<td>每次替换前进行确认</td>
+</tr>
+<tr>
+<td>替换指定行范围</td>
+<td><code>:5,20s/old/new/g</code></td>
+<td>替换第 5～20 行</td>
+</tr>
+<tr>
+<td>忽略大小写替换</td>
+<td><code>:%s/old/new/gi</code></td>
+<td>匹配时忽略大小写</td>
+</tr>
+<tr>
+<td>替换可视区域</td>
+<td><code>:&#39;&lt;,&#39;&gt;s/old/new/g</code></td>
+<td>替换当前选中的文本</td>
+</tr>
+</tbody></table>
+<p>确认替换时常用选项：</p>
+<table>
+<thead>
+<tr>
+<th>按键</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>y</code></td>
+<td>替换当前匹配</td>
+</tr>
+<tr>
+<td><code>n</code></td>
+<td>跳过当前匹配</td>
+</tr>
+<tr>
+<td><code>a</code></td>
+<td>替换后续全部匹配</td>
+</tr>
+<tr>
+<td><code>q</code></td>
+<td>退出替换</td>
+</tr>
+<tr>
+<td><code>l</code></td>
+<td>替换当前匹配后退出</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="5-文件操作"><a href="#5-文件操作" class="headerlink" title="5. 文件操作"></a>5. 文件操作</h2><table>
+<thead>
+<tr>
+<th>功能</th>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>打开文件</td>
+<td><code>:e filename</code></td>
+<td>打开指定文件</td>
+</tr>
+<tr>
+<td>重新加载文件</td>
+<td><code>:e!</code></td>
+<td>放弃未保存修改并重新加载</td>
+</tr>
+<tr>
+<td>保存文件</td>
+<td><code>:w</code></td>
+<td>保存当前文件</td>
+</tr>
+<tr>
+<td>另存为</td>
+<td><code>:saveas filename</code></td>
+<td>将当前内容保存为新文件</td>
+</tr>
+<tr>
+<td>保存并退出</td>
+<td><code>:wq</code></td>
+<td>保存后退出</td>
+</tr>
+<tr>
+<td>保存并退出</td>
+<td><code>:x</code></td>
+<td>有修改时保存，然后退出</td>
+</tr>
+<tr>
+<td>快速保存退出</td>
+<td><code>ZZ</code></td>
+<td>等价于有修改时保存并退出</td>
+</tr>
+<tr>
+<td>退出 Vim</td>
+<td><code>:q</code></td>
+<td>文件无未保存修改时退出</td>
+</tr>
+<tr>
+<td>强制退出</td>
+<td><code>:q!</code></td>
+<td>放弃修改并退出</td>
+</tr>
+<tr>
+<td>快速强制退出</td>
+<td><code>ZQ</code></td>
+<td>放弃修改并退出</td>
+</tr>
+<tr>
+<td>保存所有文件</td>
+<td><code>:wa</code></td>
+<td>保存所有已打开文件</td>
+</tr>
+<tr>
+<td>退出所有窗口</td>
+<td><code>:qa</code></td>
+<td>退出全部窗口</td>
+</tr>
+<tr>
+<td>强制退出所有窗口</td>
+<td><code>:qa!</code></td>
+<td>放弃所有修改并退出</td>
+</tr>
+<tr>
+<td>保存并退出所有窗口</td>
+<td><code>:wqa</code></td>
+<td>保存全部文件后退出</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="6-缓冲区与分屏"><a href="#6-缓冲区与分屏" class="headerlink" title="6. 缓冲区与分屏"></a>6. 缓冲区与分屏</h2><h3 id="6-1-缓冲区操作"><a href="#6-1-缓冲区操作" class="headerlink" title="6.1 缓冲区操作"></a>6.1 缓冲区操作</h3><table>
+<thead>
+<tr>
+<th>功能</th>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>查看缓冲区列表</td>
+<td><code>:ls</code> 或 <code>:buffers</code></td>
+<td>显示所有已打开文件</td>
+</tr>
+<tr>
+<td>下一个缓冲区</td>
+<td><code>:bnext</code> 或 <code>:bn</code></td>
+<td>切换到下一个文件</td>
+</tr>
+<tr>
+<td>上一个缓冲区</td>
+<td><code>:bprevious</code> 或 <code>:bp</code></td>
+<td>切换到上一个文件</td>
+</tr>
+<tr>
+<td>切换到指定缓冲区</td>
+<td><code>:buffer n</code></td>
+<td>切换到编号为 <code>n</code> 的缓冲区</td>
+</tr>
+<tr>
+<td>删除当前缓冲区</td>
+<td><code>:bdelete</code> 或 <code>:bd</code></td>
+<td>关闭当前缓冲区</td>
+</tr>
+</tbody></table>
+<h3 id="6-2-分屏操作"><a href="#6-2-分屏操作" class="headerlink" title="6.2 分屏操作"></a>6.2 分屏操作</h3><table>
+<thead>
+<tr>
+<th>功能</th>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>水平分屏</td>
+<td><code>:sp filename</code></td>
+<td>上下排列窗口</td>
+</tr>
+<tr>
+<td>垂直分屏</td>
+<td><code>:vsp filename</code></td>
+<td>左右排列窗口</td>
+</tr>
+<tr>
+<td>切换到下一个窗口</td>
+<td><code>Ctrl + w</code>，再按 <code>w</code></td>
+<td>在窗口之间循环切换</td>
+</tr>
+<tr>
+<td>切换到左侧窗口</td>
+<td><code>Ctrl + w</code>，再按 <code>h</code></td>
+<td>移动到左侧窗口</td>
+</tr>
+<tr>
+<td>切换到下方窗口</td>
+<td><code>Ctrl + w</code>，再按 <code>j</code></td>
+<td>移动到下方窗口</td>
+</tr>
+<tr>
+<td>切换到上方窗口</td>
+<td><code>Ctrl + w</code>，再按 <code>k</code></td>
+<td>移动到上方窗口</td>
+</tr>
+<tr>
+<td>切换到右侧窗口</td>
+<td><code>Ctrl + w</code>，再按 <code>l</code></td>
+<td>移动到右侧窗口</td>
+</tr>
+<tr>
+<td>关闭当前窗口</td>
+<td><code>Ctrl + w</code>，再按 <code>c</code></td>
+<td>关闭当前分屏</td>
+</tr>
+<tr>
+<td>仅保留当前窗口</td>
+<td><code>Ctrl + w</code>，再按 <code>o</code></td>
+<td>关闭其他分屏</td>
+</tr>
+<tr>
+<td>窗口等宽等高</td>
+<td><code>Ctrl + w</code>，再按 <code>=</code></td>
+<td>平均分配窗口大小</td>
+</tr>
+<tr>
+<td>增加窗口高度</td>
+<td><code>Ctrl + w</code>，再按 <code>+</code></td>
+<td>增加当前窗口高度</td>
+</tr>
+<tr>
+<td>减少窗口高度</td>
+<td><code>Ctrl + w</code>，再按 <code>-</code></td>
+<td>减少当前窗口高度</td>
+</tr>
+<tr>
+<td>增加窗口宽度</td>
+<td><code>Ctrl + w</code>，再按 <code>&gt;</code></td>
+<td>增加当前窗口宽度</td>
+</tr>
+<tr>
+<td>减少窗口宽度</td>
+<td><code>Ctrl + w</code>，再按 <code>&lt;</code></td>
+<td>减少当前窗口宽度</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="7-显示与编辑设置"><a href="#7-显示与编辑设置" class="headerlink" title="7. 显示与编辑设置"></a>7. 显示与编辑设置</h2><h3 id="7-1-界面显示"><a href="#7-1-界面显示" class="headerlink" title="7.1 界面显示"></a>7.1 界面显示</h3><table>
+<thead>
+<tr>
+<th>功能</th>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>显示绝对行号</td>
+<td><code>:set number</code></td>
+<td>在左侧显示行号</td>
+</tr>
+<tr>
+<td>隐藏绝对行号</td>
+<td><code>:set nonumber</code></td>
+<td>关闭行号显示</td>
+</tr>
+<tr>
+<td>显示相对行号</td>
+<td><code>:set relativenumber</code></td>
+<td>显示相对光标的行号</td>
+</tr>
+<tr>
+<td>隐藏相对行号</td>
+<td><code>:set norelativenumber</code></td>
+<td>关闭相对行号</td>
+</tr>
+<tr>
+<td>高亮当前行</td>
+<td><code>:set cursorline</code></td>
+<td>突出显示光标所在行</td>
+</tr>
+<tr>
+<td>取消当前行高亮</td>
+<td><code>:set nocursorline</code></td>
+<td>关闭当前行高亮</td>
+</tr>
+<tr>
+<td>显示不可见字符</td>
+<td><code>:set list</code></td>
+<td>显示制表符、行尾等字符</td>
+</tr>
+<tr>
+<td>隐藏不可见字符</td>
+<td><code>:set nolist</code></td>
+<td>关闭不可见字符显示</td>
+</tr>
+<tr>
+<td>高亮匹配括号</td>
+<td><code>:set showmatch</code></td>
+<td>短暂高亮对应括号</td>
+</tr>
+<tr>
+<td>开启搜索高亮</td>
+<td><code>:set hlsearch</code></td>
+<td>高亮全部搜索结果</td>
+</tr>
+<tr>
+<td>关闭搜索高亮</td>
+<td><code>:set nohlsearch</code></td>
+<td>禁用搜索结果高亮</td>
+</tr>
+<tr>
+<td>开启语法高亮</td>
+<td><code>:syntax enable</code></td>
+<td>启用语法高亮</td>
+</tr>
+<tr>
+<td>关闭语法高亮</td>
+<td><code>:syntax off</code></td>
+<td>禁用语法高亮</td>
+</tr>
+<tr>
+<td>显示状态位置</td>
+<td><code>:set ruler</code></td>
+<td>显示光标行列位置</td>
+</tr>
+</tbody></table>
+<h3 id="7-2-搜索设置"><a href="#7-2-搜索设置" class="headerlink" title="7.2 搜索设置"></a>7.2 搜索设置</h3><table>
+<thead>
+<tr>
+<th>功能</th>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>搜索忽略大小写</td>
+<td><code>:set ignorecase</code></td>
+<td>搜索时不区分大小写</td>
+</tr>
+<tr>
+<td>智能大小写</td>
+<td><code>:set smartcase</code></td>
+<td>包含大写字母时自动区分大小写</td>
+</tr>
+<tr>
+<td>输入时实时搜索</td>
+<td><code>:set incsearch</code></td>
+<td>输入搜索词时即时跳转</td>
+</tr>
+<tr>
+<td>高亮搜索结果</td>
+<td><code>:set hlsearch</code></td>
+<td>高亮全部匹配文本</td>
+</tr>
+</tbody></table>
+<h3 id="7-3-缩进设置"><a href="#7-3-缩进设置" class="headerlink" title="7.3 缩进设置"></a>7.3 缩进设置</h3><table>
+<thead>
+<tr>
+<th>功能</th>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Tab 转为空格</td>
+<td><code>:set expandtab</code></td>
+<td>插入空格而不是真实 Tab</td>
+</tr>
+<tr>
+<td>Tab 保留为制表符</td>
+<td><code>:set noexpandtab</code></td>
+<td>插入真实 Tab</td>
+</tr>
+<tr>
+<td>设置 Tab 宽度</td>
+<td><code>:set tabstop=4</code></td>
+<td>Tab 显示为 4 个空格宽度</td>
+</tr>
+<tr>
+<td>设置自动缩进宽度</td>
+<td><code>:set shiftwidth=4</code></td>
+<td>缩进操作使用 4 个空格</td>
+</tr>
+<tr>
+<td>设置软 Tab 宽度</td>
+<td><code>:set softtabstop=4</code></td>
+<td>编辑时按 4 个空格处理</td>
+</tr>
+<tr>
+<td>开启自动缩进</td>
+<td><code>:set autoindent</code></td>
+<td>新行继承上一行缩进</td>
+</tr>
+<tr>
+<td>开启智能缩进</td>
+<td><code>:set smartindent</code></td>
+<td>根据代码结构自动缩进</td>
+</tr>
+<tr>
+<td>启用文件类型缩进</td>
+<td><code>:filetype plugin indent on</code></td>
+<td>根据文件类型加载缩进规则</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><code>indentline</code> 不是 Vim 内置选项，通常需要安装缩进线插件后才能使用。</p>
+</blockquote>
+<hr>
+<h2 id="8-代码缩进"><a href="#8-代码缩进" class="headerlink" title="8. 代码缩进"></a>8. 代码缩进</h2><table>
+<thead>
+<tr>
+<th>功能</th>
+<th>快捷键</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>当前行向右缩进</td>
+<td><code>&gt;&gt;</code></td>
+<td>增加一级缩进</td>
+</tr>
+<tr>
+<td>当前行向左缩进</td>
+<td><code>&lt;&lt;</code></td>
+<td>减少一级缩进</td>
+</tr>
+<tr>
+<td>多行向右缩进</td>
+<td><code>n&gt;&gt;</code></td>
+<td>例如 <code>5&gt;&gt;</code> 缩进 5 行</td>
+</tr>
+<tr>
+<td>多行向左缩进</td>
+<td><code>n&lt;&lt;</code></td>
+<td>例如 <code>5&lt;&lt;</code> 减少 5 行缩进</td>
+</tr>
+<tr>
+<td>可视区域向右缩进</td>
+<td><code>&gt;</code></td>
+<td>在可视模式下使用</td>
+</tr>
+<tr>
+<td>可视区域向左缩进</td>
+<td><code>&lt;</code></td>
+<td>在可视模式下使用</td>
+</tr>
+<tr>
+<td>自动格式化当前行</td>
+<td><code>==</code></td>
+<td>根据缩进规则格式化</td>
+</tr>
+<tr>
+<td>自动格式化全文</td>
+<td><code>gg=G</code></td>
+<td>格式化整个文件</td>
+</tr>
+<tr>
+<td>自动格式化选中区域</td>
+<td><code>=</code></td>
+<td>在可视模式下使用</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="9-代码折叠"><a href="#9-代码折叠" class="headerlink" title="9. 代码折叠"></a>9. 代码折叠</h2><table>
+<thead>
+<tr>
+<th>功能</th>
+<th>快捷键或命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>启用折叠</td>
+<td><code>:set foldenable</code></td>
+<td>开启代码折叠功能</td>
+</tr>
+<tr>
+<td>禁用折叠</td>
+<td><code>:set nofoldenable</code></td>
+<td>暂时关闭折叠显示</td>
+</tr>
+<tr>
+<td>手动创建折叠</td>
+<td><code>zf</code> + 移动命令</td>
+<td>例如 <code>zf5j</code> 折叠下面 5 行</td>
+</tr>
+<tr>
+<td>打开当前折叠</td>
+<td><code>zo</code></td>
+<td>展开光标所在折叠</td>
+</tr>
+<tr>
+<td>关闭当前折叠</td>
+<td><code>zc</code></td>
+<td>折叠光标所在区域</td>
+</tr>
+<tr>
+<td>切换当前折叠</td>
+<td><code>za</code></td>
+<td>在展开和关闭之间切换</td>
+</tr>
+<tr>
+<td>递归打开当前折叠</td>
+<td><code>zO</code></td>
+<td>展开当前区域内所有嵌套折叠</td>
+</tr>
+<tr>
+<td>递归关闭当前折叠</td>
+<td><code>zC</code></td>
+<td>关闭当前区域及其嵌套折叠</td>
+</tr>
+<tr>
+<td>打开所有折叠</td>
+<td><code>zR</code></td>
+<td>展开文件中的所有折叠</td>
+</tr>
+<tr>
+<td>关闭所有折叠</td>
+<td><code>zM</code></td>
+<td>关闭文件中的所有折叠</td>
+</tr>
+<tr>
+<td>减少折叠级别</td>
+<td><code>zr</code></td>
+<td>逐级展开折叠</td>
+</tr>
+<tr>
+<td>增加折叠级别</td>
+<td><code>zm</code></td>
+<td>逐级关闭折叠</td>
+</tr>
+<tr>
+<td>删除当前折叠</td>
+<td><code>zd</code></td>
+<td>删除光标所在的手动折叠</td>
+</tr>
+<tr>
+<td>删除全部折叠</td>
+<td><code>zE</code></td>
+<td>删除文件中全部手动折叠</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="10-实用组合命令"><a href="#10-实用组合命令" class="headerlink" title="10. 实用组合命令"></a>10. 实用组合命令</h2><table>
+<thead>
+<tr>
+<th>目标</th>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>删除 5 行</td>
+<td><code>5dd</code></td>
+<td>从当前行开始删除 5 行</td>
+</tr>
+<tr>
+<td>复制 3 行</td>
+<td><code>3yy</code></td>
+<td>从当前行开始复制 3 行</td>
+</tr>
+<tr>
+<td>向下移动 10 行</td>
+<td><code>10j</code></td>
+<td>向下移动 10 行</td>
+</tr>
+<tr>
+<td>删除引号内内容</td>
+<td><code>di&quot;</code></td>
+<td>删除双引号中的内容，保留引号</td>
+</tr>
+<tr>
+<td>删除包括引号的内容</td>
+<td><code>da&quot;</code></td>
+<td>删除内容及两侧双引号</td>
+</tr>
+<tr>
+<td>修改括号内内容</td>
+<td><code>ci(</code></td>
+<td>清空圆括号内容并进入插入模式</td>
+</tr>
+<tr>
+<td>复制大括号内内容</td>
+<td><code>yi{</code></td>
+<td>复制大括号内部内容</td>
+</tr>
+<tr>
+<td>选择当前单词</td>
+<td><code>viw</code></td>
+<td>进入可视模式并选择当前单词</td>
+</tr>
+<tr>
+<td>删除当前段落</td>
+<td><code>dap</code></td>
+<td>删除当前段落</td>
+</tr>
+<tr>
+<td>复制当前段落</td>
+<td><code>yap</code></td>
+<td>复制当前段落</td>
+</tr>
+<tr>
+<td>格式化整个文件</td>
+<td><code>gg=G</code></td>
+<td>从文件开头格式化到文件末尾</td>
+</tr>
+<tr>
+<td>删除全文</td>
+<td><code>ggdG</code></td>
+<td>删除文件中的全部内容</td>
+</tr>
+<tr>
+<td>复制全文</td>
+<td><code>ggyG</code></td>
+<td>复制文件中的全部内容</td>
+</tr>
+<tr>
+<td>全文替换并确认</td>
+<td><code>:%s/old/new/gc</code></td>
+<td>逐个确认替换结果</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="11-推荐的基础配置"><a href="#11-推荐的基础配置" class="headerlink" title="11. 推荐的基础配置"></a>11. 推荐的基础配置</h2><p>将以下内容写入 <code>~/.vimrc</code>：</p>
+<pre><code class="language-vim">&quot; 显示行号
+set number
+set relativenumber
+
+&quot; 高亮当前行和匹配括号
+set cursorline
+set showmatch
+
+&quot; 搜索设置
+set ignorecase
+set smartcase
+set incsearch
+set hlsearch
+
+&quot; 缩进设置
+set expandtab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set autoindent
+set smartindent
+
+&quot; 显示与交互
+set ruler
+set wildmenu
+set mouse=a
+set encoding=utf-8
+
+&quot; 启用语法高亮和文件类型检测
+syntax enable
+filetype plugin indent on
+</code></pre>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://KirisameMarisa114514.github.io">mio</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://kirisamemarisa114514.github.io/2025/11/13/vim%E7%AC%94%E8%AE%B0/">https://kirisamemarisa114514.github.io/2025/11/13/vim%E7%AC%94%E8%AE%B0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Internet/">Internet</a></div><div class="post-share"><div class="social-share" data-image="/img/covers/vim%E7%AC%94%E8%AE%B0.jpg" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2026/07/16/ctf-writeup-showcase/" title="CTF Writeup 展示索引"><img class="cover" src="/img/covers/ctf-writeup-showcase.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post" loading='lazy'><div class="info"><div class="info-1"><div class="info-item-1">Previous</div><div class="info-item-2">CTF Writeup 展示索引</div></div><div class="info-2"><div class="info-item-1">CTF Writeup 的栏目索引，用于整理 Web、Pwn、Reverse、Misc 等方向。</div></div></div></a><a class="pagination-related" href="/2025/11/12/hello-world/" title="Ciallo～(∠・ω&lt; )⌒★"><img class="cover" src="/img/covers/hello-world.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post" loading='lazy'><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2">Ciallo～(∠・ω< )⌒★</div></div><div class="info-2"><div class="info-item-1">欢迎喵～</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2025/11/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" title="计算机网络相关"><img class="cover" src="/img/covers/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C.jpg" alt="cover" loading='lazy'><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-11-12</div><div class="info-item-2">计算机网络相关</div></div><div class="info-2"><div class="info-item-1">WLAN-  IEEE 802.11 1. 标准认识 一系列无线局域网通信标准，用于规定无线网络物理层和MAC层技术规范  2. 物理层技术 包括多种扩频技术和调制方式以适应不同频段和传输速率要求，如:跳频扩频（FHSS），正交频分复用（OFDM），直接序列扩频（DSSS)，多输入多输出（MIMO)  3. MAC层技术 负责媒体访问控制和数据链路层的传输控制，在发送数据前监听信道是否空闲  4. 主要子协议与使用频段认识 理论速...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comments</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/ loading='lazy'></div><div class="author-info-name">mio</div><div class="author-info-description">信息安全学生<br>CTF / Linux / Docker / Kubernetes / AI Agent</div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">8</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">22</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">13</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/KirisameMarisa114514"><i class="fab fa-github"></i><span>GitHub</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">记录 CTF Writeup、云原生实践和 AI Agent 折腾。</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Vim-%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE%E4%B8%8E%E5%91%BD%E4%BB%A4%E6%89%8B%E5%86%8C"><span class="toc-number">1.</span> <span class="toc-text">Vim 常用快捷键与命令手册</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%A8%A1%E5%BC%8F%E5%88%87%E6%8D%A2"><span class="toc-number">1.1.</span> <span class="toc-text">1. 模式切换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E8%BF%9B%E5%85%A5%E4%B8%8D%E5%90%8C%E6%A8%A1%E5%BC%8F"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.1 进入不同模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E9%80%80%E5%87%BA%E5%BD%93%E5%89%8D%E6%A8%A1%E5%BC%8F"><span class="toc-number">1.1.2.</span> <span class="toc-text">1.2 退出当前模式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%85%89%E6%A0%87%E7%A7%BB%E5%8A%A8"><span class="toc-number">1.2.</span> <span class="toc-text">2. 光标移动</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E5%9F%BA%E7%A1%80%E7%A7%BB%E5%8A%A8"><span class="toc-number">1.2.1.</span> <span class="toc-text">2.1 基础移动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E8%A1%8C%E4%B8%8E%E6%96%87%E4%BB%B6%E7%A7%BB%E5%8A%A8"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.2 行与文件移动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E9%A1%B5%E9%9D%A2%E6%BB%9A%E5%8A%A8"><span class="toc-number">1.2.3.</span> <span class="toc-text">2.3 页面滚动</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%96%87%E6%9C%AC%E6%8F%92%E5%85%A5%E4%B8%8E%E4%BF%AE%E6%94%B9"><span class="toc-number">1.3.</span> <span class="toc-text">3. 文本插入与修改</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E6%8F%92%E5%85%A5%E4%B8%8E%E6%9B%BF%E6%8D%A2"><span class="toc-number">1.3.1.</span> <span class="toc-text">3.1 插入与替换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E5%88%A0%E9%99%A4%E6%93%8D%E4%BD%9C"><span class="toc-number">1.3.2.</span> <span class="toc-text">3.2 删除操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E5%A4%8D%E5%88%B6%E4%B8%8E%E7%B2%98%E8%B4%B4"><span class="toc-number">1.3.3.</span> <span class="toc-text">3.3 复制与粘贴</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-%E6%92%A4%E9%94%80%E4%B8%8E%E9%87%8D%E5%A4%8D"><span class="toc-number">1.3.4.</span> <span class="toc-text">3.4 撤销与重复</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E6%90%9C%E7%B4%A2%E4%B8%8E%E6%9B%BF%E6%8D%A2"><span class="toc-number">1.4.</span> <span class="toc-text">4. 搜索与替换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E6%90%9C%E7%B4%A2%E6%96%87%E6%9C%AC"><span class="toc-number">1.4.1.</span> <span class="toc-text">4.1 搜索文本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-%E6%9B%BF%E6%8D%A2%E6%96%87%E6%9C%AC"><span class="toc-number">1.4.2.</span> <span class="toc-text">4.2 替换文本</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C"><span class="toc-number">1.5.</span> <span class="toc-text">5. 文件操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E7%BC%93%E5%86%B2%E5%8C%BA%E4%B8%8E%E5%88%86%E5%B1%8F"><span class="toc-number">1.6.</span> <span class="toc-text">6. 缓冲区与分屏</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-%E7%BC%93%E5%86%B2%E5%8C%BA%E6%93%8D%E4%BD%9C"><span class="toc-number">1.6.1.</span> <span class="toc-text">6.1 缓冲区操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-%E5%88%86%E5%B1%8F%E6%93%8D%E4%BD%9C"><span class="toc-number">1.6.2.</span> <span class="toc-text">6.2 分屏操作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E6%98%BE%E7%A4%BA%E4%B8%8E%E7%BC%96%E8%BE%91%E8%AE%BE%E7%BD%AE"><span class="toc-number">1.7.</span> <span class="toc-text">7. 显示与编辑设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-%E7%95%8C%E9%9D%A2%E6%98%BE%E7%A4%BA"><span class="toc-number">1.7.1.</span> <span class="toc-text">7.1 界面显示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-2-%E6%90%9C%E7%B4%A2%E8%AE%BE%E7%BD%AE"><span class="toc-number">1.7.2.</span> <span class="toc-text">7.2 搜索设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-3-%E7%BC%A9%E8%BF%9B%E8%AE%BE%E7%BD%AE"><span class="toc-number">1.7.3.</span> <span class="toc-text">7.3 缩进设置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E4%BB%A3%E7%A0%81%E7%BC%A9%E8%BF%9B"><span class="toc-number">1.8.</span> <span class="toc-text">8. 代码缩进</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-%E4%BB%A3%E7%A0%81%E6%8A%98%E5%8F%A0"><span class="toc-number">1.9.</span> <span class="toc-text">9. 代码折叠</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-%E5%AE%9E%E7%94%A8%E7%BB%84%E5%90%88%E5%91%BD%E4%BB%A4"><span class="toc-number">1.10.</span> <span class="toc-text">10. 实用组合命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-%E6%8E%A8%E8%8D%90%E7%9A%84%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE"><span class="toc-number">1.11.</span> <span class="toc-text">11. 推荐的基础配置</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2026/07/19/hexo-butterfly-github-pages/" title="从 Hexo 到 GitHub Pages：Butterfly 二次元博客搭建与动效实践"><img src="/img/covers/hexo-butterfly.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="从 Hexo 到 GitHub Pages：Butterfly 二次元博客搭建与动效实践"/ loading='lazy'></a><div class="content"><a class="title" href="/2026/07/19/hexo-butterfly-github-pages/" title="从 Hexo 到 GitHub Pages：Butterfly 二次元博客搭建与动效实践">从 Hexo 到 GitHub Pages：Butterfly 二次元博客搭建与动效实践</a><time datetime="2026-07-19T07:38:00.000Z" title="Created 2026-07-19 15:38:00">2026-07-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/07/19/openlist-docker-compose-deployment/" title="Docker Compose 部署 OpenList：持久化配置与本地目录挂载"><img src="/img/covers/openlist-docker.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Docker Compose 部署 OpenList：持久化配置与本地目录挂载"/ loading='lazy'></a><div class="content"><a class="title" href="/2026/07/19/openlist-docker-compose-deployment/" title="Docker Compose 部署 OpenList：持久化配置与本地目录挂载">Docker Compose 部署 OpenList：持久化配置与本地目录挂载</a><time datetime="2026-07-19T07:37:00.000Z" title="Created 2026-07-19 15:37:00">2026-07-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/07/19/fastapi-system-monitor-dashboard/" title="FastAPI + psutil + Chart.js：轻量系统监控仪表盘容器化"><img src="/img/covers/fastapi-system-monitor.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="FastAPI + psutil + Chart.js：轻量系统监控仪表盘容器化"/ loading='lazy'></a><div class="content"><a class="title" href="/2026/07/19/fastapi-system-monitor-dashboard/" title="FastAPI + psutil + Chart.js：轻量系统监控仪表盘容器化">FastAPI + psutil + Chart.js：轻量系统监控仪表盘容器化</a><time datetime="2026-07-19T07:36:00.000Z" title="Created 2026-07-19 15:36:00">2026-07-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/07/19/wordpress-mysql-docker-compose/" title="WordPress + MySQL：用 Docker Compose 搭建双容器博客"><img src="/img/covers/wordpress-mysql.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="WordPress + MySQL：用 Docker Compose 搭建双容器博客"/ loading='lazy'></a><div class="content"><a class="title" href="/2026/07/19/wordpress-mysql-docker-compose/" title="WordPress + MySQL：用 Docker Compose 搭建双容器博客">WordPress + MySQL：用 Docker Compose 搭建双容器博客</a><time datetime="2026-07-19T07:35:00.000Z" title="Created 2026-07-19 15:35:00">2026-07-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/07/16/ctf-writeup-showcase/" title="CTF Writeup 展示索引"><img src="/img/covers/ctf-writeup-showcase.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CTF Writeup 展示索引"/ loading='lazy'></a><div class="content"><a class="title" href="/2026/07/16/ctf-writeup-showcase/" title="CTF Writeup 展示索引">CTF Writeup 展示索引</a><time datetime="2026-07-16T06:16:00.000Z" title="Created 2026-07-16 14:16:00">2026-07-16</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By mio</span><span class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.2</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.5</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll to Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.5"></script><script src="/js/main.js?v=5.5.5"></script><div class="js-pjax"><script>(() => {
+  let initFn = window.walineFn || null
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = {"locale":{"placeholder":"欢迎交流 CTF、Linux、云原生和 AI Agent。"}}
+
+  const destroyWaline = ele => ele.destroy()
+
+  const initWaline = (Fn, el = document, path = window.location.pathname) => {
+    const waline = Fn({
+      el: el.querySelector('#waline-wrap'),
+      serverURL: '',
+      pageview: false,
+      dark: 'html[data-theme="dark"]',
+      comment: false,
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || path
+    })
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyWaline = () => {
+        destroyWaline(waline)
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const loadWaline = (el, path) => {
+    if (initFn) initWaline(initFn, el, path)
+    else {
+      btf.getCSS('https://cdn.jsdelivr.net/npm/@waline/client@3.15.2/dist/waline.min.css')
+        .then(() => import('https://cdn.jsdelivr.net/npm/@waline/client@3.15.2/dist/waline.min.js'))
+        .then(({ init }) => {
+          initFn = init || Waline.init
+          initWaline(initFn, el, path)
+          window.walineFn = initFn
+        })
+    }
+  }
+
+  if (isShuoshuo) {
+    'Waline' === 'Waline'
+      ? window.shuoshuoComment = { loadComment: loadWaline } 
+      : window.loadOtherComment = loadWaline
+    return
+  }
+
+  if ('Waline' === 'Waline' || !true) {
+    if (true) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+    else setTimeout(loadWaline, 0)
+  } else {
+    window.loadOtherComment = loadWaline
+  }
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading Database</span></div><div class="local-search-input"><input placeholder="输入关键词搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.5"></script></div></div></body></html>

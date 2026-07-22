@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>CTF Writeup 展示索引</title>
+    <url>/2026/07/16/ctf-writeup-showcase/</url>
+    <content><![CDATA[<p>这里作为 CTF Writeup 的展示入口，后续比赛复盘和题目分析可以按方向沉淀到对应分类。</p>
+<h2 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h2><p>记录 Web 安全、漏洞利用、源码审计和渗透思路。</p>
+<h2 id="Pwn"><a href="#Pwn" class="headerlink" title="Pwn"></a>Pwn</h2><p>记录二进制漏洞利用、glibc、ROP、堆利用和调试过程。</p>
+<h2 id="Reverse"><a href="#Reverse" class="headerlink" title="Reverse"></a>Reverse</h2><p>记录逆向分析、算法还原、壳处理和符号恢复。</p>
+<h2 id="Misc"><a href="#Misc" class="headerlink" title="Misc"></a>Misc</h2><p>记录流量分析、取证、密码学杂项和隐写分析。</p>
+]]></content>
+      <categories>
+        <category>安全研究</category>
+        <category>CTF</category>
+        <category>Web</category>
+        <category>Pwn</category>
+        <category>Reverse</category>
+        <category>Misc</category>
+      </categories>
+      <tags>
+        <tag>CTF</tag>
+        <tag>Writeup</tag>
+        <tag>Web</tag>
+        <tag>Pwn</tag>
+        <tag>Reverse</tag>
+        <tag>Misc</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>FastAPI + psutil + Chart.js：轻量系统监控仪表盘容器化</title>
     <url>/2026/07/19/fastapi-system-monitor-dashboard/</url>
     <content><![CDATA[<p>这是一个基于 FastAPI、psutil 和 Chart.js 的轻量系统监控项目。后端负责采集 CPU、内存、磁盘、网络和进程数据，前端定时请求 REST API，再将数据绘制成动态图表。</p>
@@ -101,32 +127,6 @@
         <tag>psutil</tag>
         <tag>Chart.js</tag>
         <tag>Docker</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CTF Writeup 展示索引</title>
-    <url>/2026/07/16/ctf-writeup-showcase/</url>
-    <content><![CDATA[<p>这里作为 CTF Writeup 的展示入口，后续比赛复盘和题目分析可以按方向沉淀到对应分类。</p>
-<h2 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h2><p>记录 Web 安全、漏洞利用、源码审计和渗透思路。</p>
-<h2 id="Pwn"><a href="#Pwn" class="headerlink" title="Pwn"></a>Pwn</h2><p>记录二进制漏洞利用、glibc、ROP、堆利用和调试过程。</p>
-<h2 id="Reverse"><a href="#Reverse" class="headerlink" title="Reverse"></a>Reverse</h2><p>记录逆向分析、算法还原、壳处理和符号恢复。</p>
-<h2 id="Misc"><a href="#Misc" class="headerlink" title="Misc"></a>Misc</h2><p>记录流量分析、取证、密码学杂项和隐写分析。</p>
-]]></content>
-      <categories>
-        <category>安全研究</category>
-        <category>CTF</category>
-        <category>Web</category>
-        <category>Pwn</category>
-        <category>Reverse</category>
-        <category>Misc</category>
-      </categories>
-      <tags>
-        <tag>CTF</tag>
-        <tag>Writeup</tag>
-        <tag>Web</tag>
-        <tag>Pwn</tag>
-        <tag>Reverse</tag>
-        <tag>Misc</tag>
       </tags>
   </entry>
   <entry>
@@ -250,6 +250,97 @@
     <title>Ciallo～(∠・ω&lt; )⌒★</title>
     <url>/2025/11/12/hello-world/</url>
     <content><![CDATA[<h2 id="欢迎喵～"><a href="#欢迎喵～" class="headerlink" title="欢迎喵～"></a>欢迎喵～</h2>]]></content>
+  </entry>
+  <entry>
+    <title>Docker Compose 部署 OpenList：持久化配置与本地目录挂载</title>
+    <url>/2026/07/19/openlist-docker-compose-deployment/</url>
+    <content><![CDATA[<p>OpenList 可以把不同来源的文件统一组织到一个 Web 界面中。这次实践使用 Docker Compose 部署 AIO 镜像，并把配置、运行数据和实际文件目录分开挂载，便于升级与备份。</p>
+<h2 id="当前部署结构"><a href="#当前部署结构" class="headerlink" title="当前部署结构"></a>当前部署结构</h2><p>运行环境使用：</p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>当前配置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>镜像</td>
+<td><code>openlistteam/openlist:v4.1.9-aio</code></td>
+</tr>
+<tr>
+<td>容器名</td>
+<td><code>openlist</code></td>
+</tr>
+<tr>
+<td>Web 端口</td>
+<td><code>5244:5244</code></td>
+</tr>
+<tr>
+<td>配置目录</td>
+<td><code>./config:/opt/openlist/config</code></td>
+</tr>
+<tr>
+<td>数据目录</td>
+<td><code>./data:/opt/openlist/data</code></td>
+</tr>
+<tr>
+<td>文件目录</td>
+<td><code>./downloads:/data</code></td>
+</tr>
+</tbody></table>
+<p>对应的 Compose 核心配置如下：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">openlist:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">openlistteam/openlist:v4.1.9-aio</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">openlist</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;5244:5244&quot;</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./config:/opt/openlist/config</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./data:/opt/openlist/data</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./downloads:/data</span></span><br></pre></td></tr></table></figure>
+
+<p>这里没有把所有内容塞进一个目录，而是有意拆成三个层次。</p>
+<h2 id="为什么要拆分挂载"><a href="#为什么要拆分挂载" class="headerlink" title="为什么要拆分挂载"></a>为什么要拆分挂载</h2><h3 id="config"><a href="#config" class="headerlink" title="config"></a>config</h3><p><code>config</code> 保存程序级配置。把它持久化后，重建容器时不需要重新调整基础运行参数。</p>
+<h3 id="data"><a href="#data" class="headerlink" title="data"></a>data</h3><p><code>data</code> 保存数据库、日志和 OpenList 自身的运行状态，是最需要备份的部分。数据库正在写入时不应直接随意复制；更稳妥的做法是先停止容器，或使用数据库支持的一致性备份方式。</p>
+<h3 id="downloads"><a href="#downloads" class="headerlink" title="downloads"></a>downloads</h3><p><code>downloads</code> 是真正存放用户文件的宿主机目录，在容器内映射为 <code>/data</code>。OpenList 后台添加“本地存储”时，应填写容器看到的 <code>/data</code>，而不是宿主机路径。</p>
+<p>这也是容器挂载最容易混淆的地方：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">宿主机路径                         容器内路径</span><br><span class="line">$HOME/project/Openlist/downloads      -&gt;  /data</span><br></pre></td></tr></table></figure>
+
+<p>Web 管理界面运行在容器内部，因此它只能理解右侧路径。</p>
+<h2 id="启动和查看状态"><a href="#启动和查看状态" class="headerlink" title="启动和查看状态"></a>启动和查看状态</h2><p>进入 Compose 文件所在目录后：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker compose pull</span><br><span class="line">docker compose up -d</span><br><span class="line">docker compose ps</span><br></pre></td></tr></table></figure>
+
+<p>查看最近日志：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker compose logs --<span class="built_in">tail</span> 100 openlist</span><br></pre></td></tr></table></figure>
+
+<p>本机访问地址：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">http://127.0.0.1:5244/</span><br></pre></td></tr></table></figure>
+
+<p>如果从其他设备访问，需要确认防火墙和局域网访问策略，而不是直接把管理端口暴露到公网。</p>
+<h2 id="添加本地存储时的检查项"><a href="#添加本地存储时的检查项" class="headerlink" title="添加本地存储时的检查项"></a>添加本地存储时的检查项</h2><ol>
+<li>驱动选择“本地存储”；</li>
+<li>挂载路径使用站点中的虚拟路径；</li>
+<li>根文件夹路径填写容器内的 <code>/data</code>；</li>
+<li>检查目录的读取和写入权限；</li>
+<li>不要把管理令牌、密码或数据库文件写进博客和公开仓库。</li>
+</ol>
+<p>权限问题不建议通过整个项目递归 <code>777</code> 来长期解决。更合适的方式是确认容器运行用户，再为对应目录设置所有者和最小可用权限。</p>
+<h2 id="升级策略"><a href="#升级策略" class="headerlink" title="升级策略"></a>升级策略</h2><p>升级前先记录当前镜像版本，并备份 <code>config</code> 与 <code>data</code>：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker compose down</span><br><span class="line"><span class="comment"># 在这里执行自己的备份操作</span></span><br><span class="line">docker compose pull</span><br><span class="line">docker compose up -d</span><br></pre></td></tr></table></figure>
+
+<p>升级后至少验证：</p>
+<ul>
+<li>首页可以打开；</li>
+<li>管理员能够登录；</li>
+<li>存储列表正常；</li>
+<li><code>/data</code> 下的目录可以浏览；</li>
+<li>上传、下载和预览符合预期；</li>
+<li>日志中没有反复重启或数据库错误。</li>
+</ul>
+<h2 id="这次实践的收获"><a href="#这次实践的收获" class="headerlink" title="这次实践的收获"></a>这次实践的收获</h2><p>OpenList 的部署命令并不复杂，真正需要理解的是“宿主机、容器和应用配置”三层路径之间的关系。只要配置和数据已经持久化，容器本身就可以随时重建；而目录挂载、备份一致性和最小权限，才决定服务能否长期稳定运行。</p>
+]]></content>
+      <categories>
+        <category>云原生</category>
+        <category>Docker</category>
+      </categories>
+      <tags>
+        <tag>Docker</tag>
+        <tag>Docker Compose</tag>
+        <tag>OpenList</tag>
+        <tag>Self-hosted</tag>
+      </tags>
   </entry>
   <entry>
     <title>Vim快捷键</title>
@@ -1609,97 +1700,6 @@ filetype plugin indent on
       </tags>
   </entry>
   <entry>
-    <title>Docker Compose 部署 OpenList：持久化配置与本地目录挂载</title>
-    <url>/2026/07/19/openlist-docker-compose-deployment/</url>
-    <content><![CDATA[<p>OpenList 可以把不同来源的文件统一组织到一个 Web 界面中。这次实践使用 Docker Compose 部署 AIO 镜像，并把配置、运行数据和实际文件目录分开挂载，便于升级与备份。</p>
-<h2 id="当前部署结构"><a href="#当前部署结构" class="headerlink" title="当前部署结构"></a>当前部署结构</h2><p>运行环境使用：</p>
-<table>
-<thead>
-<tr>
-<th>项目</th>
-<th>当前配置</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>镜像</td>
-<td><code>openlistteam/openlist:v4.1.9-aio</code></td>
-</tr>
-<tr>
-<td>容器名</td>
-<td><code>openlist</code></td>
-</tr>
-<tr>
-<td>Web 端口</td>
-<td><code>5244:5244</code></td>
-</tr>
-<tr>
-<td>配置目录</td>
-<td><code>./config:/opt/openlist/config</code></td>
-</tr>
-<tr>
-<td>数据目录</td>
-<td><code>./data:/opt/openlist/data</code></td>
-</tr>
-<tr>
-<td>文件目录</td>
-<td><code>./downloads:/data</code></td>
-</tr>
-</tbody></table>
-<p>对应的 Compose 核心配置如下：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">openlist:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">openlistteam/openlist:v4.1.9-aio</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">openlist</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;5244:5244&quot;</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./config:/opt/openlist/config</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./data:/opt/openlist/data</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./downloads:/data</span></span><br></pre></td></tr></table></figure>
-
-<p>这里没有把所有内容塞进一个目录，而是有意拆成三个层次。</p>
-<h2 id="为什么要拆分挂载"><a href="#为什么要拆分挂载" class="headerlink" title="为什么要拆分挂载"></a>为什么要拆分挂载</h2><h3 id="config"><a href="#config" class="headerlink" title="config"></a>config</h3><p><code>config</code> 保存程序级配置。把它持久化后，重建容器时不需要重新调整基础运行参数。</p>
-<h3 id="data"><a href="#data" class="headerlink" title="data"></a>data</h3><p><code>data</code> 保存数据库、日志和 OpenList 自身的运行状态，是最需要备份的部分。数据库正在写入时不应直接随意复制；更稳妥的做法是先停止容器，或使用数据库支持的一致性备份方式。</p>
-<h3 id="downloads"><a href="#downloads" class="headerlink" title="downloads"></a>downloads</h3><p><code>downloads</code> 是真正存放用户文件的宿主机目录，在容器内映射为 <code>/data</code>。OpenList 后台添加“本地存储”时，应填写容器看到的 <code>/data</code>，而不是宿主机路径。</p>
-<p>这也是容器挂载最容易混淆的地方：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">宿主机路径                         容器内路径</span><br><span class="line">$HOME/project/Openlist/downloads      -&gt;  /data</span><br></pre></td></tr></table></figure>
-
-<p>Web 管理界面运行在容器内部，因此它只能理解右侧路径。</p>
-<h2 id="启动和查看状态"><a href="#启动和查看状态" class="headerlink" title="启动和查看状态"></a>启动和查看状态</h2><p>进入 Compose 文件所在目录后：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker compose pull</span><br><span class="line">docker compose up -d</span><br><span class="line">docker compose ps</span><br></pre></td></tr></table></figure>
-
-<p>查看最近日志：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker compose logs --<span class="built_in">tail</span> 100 openlist</span><br></pre></td></tr></table></figure>
-
-<p>本机访问地址：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">http://127.0.0.1:5244/</span><br></pre></td></tr></table></figure>
-
-<p>如果从其他设备访问，需要确认防火墙和局域网访问策略，而不是直接把管理端口暴露到公网。</p>
-<h2 id="添加本地存储时的检查项"><a href="#添加本地存储时的检查项" class="headerlink" title="添加本地存储时的检查项"></a>添加本地存储时的检查项</h2><ol>
-<li>驱动选择“本地存储”；</li>
-<li>挂载路径使用站点中的虚拟路径；</li>
-<li>根文件夹路径填写容器内的 <code>/data</code>；</li>
-<li>检查目录的读取和写入权限；</li>
-<li>不要把管理令牌、密码或数据库文件写进博客和公开仓库。</li>
-</ol>
-<p>权限问题不建议通过整个项目递归 <code>777</code> 来长期解决。更合适的方式是确认容器运行用户，再为对应目录设置所有者和最小可用权限。</p>
-<h2 id="升级策略"><a href="#升级策略" class="headerlink" title="升级策略"></a>升级策略</h2><p>升级前先记录当前镜像版本，并备份 <code>config</code> 与 <code>data</code>：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker compose down</span><br><span class="line"><span class="comment"># 在这里执行自己的备份操作</span></span><br><span class="line">docker compose pull</span><br><span class="line">docker compose up -d</span><br></pre></td></tr></table></figure>
-
-<p>升级后至少验证：</p>
-<ul>
-<li>首页可以打开；</li>
-<li>管理员能够登录；</li>
-<li>存储列表正常；</li>
-<li><code>/data</code> 下的目录可以浏览；</li>
-<li>上传、下载和预览符合预期；</li>
-<li>日志中没有反复重启或数据库错误。</li>
-</ul>
-<h2 id="这次实践的收获"><a href="#这次实践的收获" class="headerlink" title="这次实践的收获"></a>这次实践的收获</h2><p>OpenList 的部署命令并不复杂，真正需要理解的是“宿主机、容器和应用配置”三层路径之间的关系。只要配置和数据已经持久化，容器本身就可以随时重建；而目录挂载、备份一致性和最小权限，才决定服务能否长期稳定运行。</p>
-]]></content>
-      <categories>
-        <category>云原生</category>
-        <category>Docker</category>
-      </categories>
-      <tags>
-        <tag>Docker</tag>
-        <tag>Docker Compose</tag>
-        <tag>OpenList</tag>
-        <tag>Self-hosted</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>计算机网络相关</title>
     <url>/2025/11/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</url>
     <content><![CDATA[<h1 id="WLAN"><a href="#WLAN" class="headerlink" title="WLAN"></a>WLAN</h1><h2 id="IEEE-802-11"><a href="#IEEE-802-11" class="headerlink" title="-  IEEE 802.11"></a>-  IEEE 802.11</h2><p><font size=4> <b>1. 标准认识</b> </font><br>一系列<strong>无线局域网通信标准</strong>，用于规定<strong>无线网络物理层和MAC层</strong>技术规范</p>
@@ -1792,8 +1792,8 @@ filetype plugin indent on
         <category>Web</category>
       </categories>
       <tags>
-        <tag>Docker</tag>
         <tag>Web</tag>
+        <tag>Docker</tag>
         <tag>Docker Compose</tag>
         <tag>WordPress</tag>
         <tag>MySQL</tag>

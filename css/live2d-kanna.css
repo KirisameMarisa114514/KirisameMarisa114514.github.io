@@ -4,7 +4,7 @@
   bottom: max(0px, env(safe-area-inset-bottom));
   z-index: 89;
   width: 250px;
-  height: 280px;
+  height: 320px;
   pointer-events: none;
   user-select: none;
   -webkit-user-select: none;
@@ -104,7 +104,7 @@ body.read-mode #kanna-live2d-restore {
   #kanna-live2d-widget {
     left: max(0px, env(safe-area-inset-left));
     width: 132px;
-    height: 148px;
+    height: 169px;
     opacity: 0.92;
   }
 
@@ -122,7 +122,7 @@ body.read-mode #kanna-live2d-restore {
 @media (max-width: 480px), (max-height: 620px) {
   #kanna-live2d-widget {
     width: 108px;
-    height: 121px;
+    height: 138px;
     opacity: 0.88;
   }
 }

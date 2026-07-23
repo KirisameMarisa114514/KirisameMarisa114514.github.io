@@ -27,11 +27,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Ciallo～(∠・ω&lt; )⌒★</title>
-    <url>/2025/11/12/hello-world/</url>
-    <content><![CDATA[<h2 id="欢迎喵～"><a href="#欢迎喵～" class="headerlink" title="欢迎喵～"></a>欢迎喵～</h2>]]></content>
-  </entry>
-  <entry>
     <title>FastAPI + psutil + Chart.js：轻量系统监控仪表盘容器化</title>
     <url>/2026/07/19/fastapi-system-monitor-dashboard/</url>
     <content><![CDATA[<p>这是一个基于 FastAPI、psutil 和 Chart.js 的轻量系统监控项目。后端负责采集 CPU、内存、磁盘、网络和进程数据，前端定时请求 REST API，再将数据绘制成动态图表。</p>
@@ -133,6 +128,11 @@
         <tag>Chart.js</tag>
         <tag>Docker</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Ciallo～(∠・ω&lt; )⌒★</title>
+    <url>/2025/11/12/hello-world/</url>
+    <content><![CDATA[<h2 id="欢迎喵～"><a href="#欢迎喵～" class="headerlink" title="欢迎喵～"></a>欢迎喵～</h2>]]></content>
   </entry>
   <entry>
     <title>从 Hexo 到 GitHub Pages：Butterfly 二次元博客搭建与动效实践</title>
@@ -1700,21 +1700,6 @@ filetype plugin indent on
       </tags>
   </entry>
   <entry>
-    <title>计算机网络相关</title>
-    <url>/2025/11/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</url>
-    <content><![CDATA[<h1 id="WLAN"><a href="#WLAN" class="headerlink" title="WLAN"></a>WLAN</h1><h2 id="IEEE-802-11"><a href="#IEEE-802-11" class="headerlink" title="-  IEEE 802.11"></a>-  IEEE 802.11</h2><p><font size=4> <b>1. 标准认识</b> </font><br>一系列<strong>无线局域网通信标准</strong>，用于规定<strong>无线网络物理层和MAC层</strong>技术规范</p>
-<p><font size=4> <b>2. 物理层技术</b> </font><br>包括多种<strong>扩频技术和调制方式</strong>以适应不同频段和传输速率要求，如:跳频扩频<br>（FHSS），正交频分复用（OFDM），直接序列扩频（DSSS)，多输入多输出（MIMO)</p>
-<p><font size=4> <b>3. MAC层技术</b> </font><br>负责<strong>媒体访问控制和数据链路层的传输控制</strong>，在发送数据前监听信道是否空闲</p>
-<p><font size=4> <b>4. 主要子协议与使用频段认识</b> </font><br>理论速率影响因素：<strong>信道宽带，调制方式，编码率，空间流数量，GI保护间隔，<br>数据子载波数和频段等。<strong>2.4GHz和5GHz频段属于</strong>免许可的ISM频段</strong>，为全球<br>通用频段，适用于高清视频流媒体，在线游戏，大型文件传输等高流量需求。</p>
-<p><strong>2.4GHz频段</strong>:穿透能力强，衰减小，覆盖范围大，适合宽阔区域或隔墙多的环境<br><strong>5GHz频段</strong>：数据传输率较高，穿透障碍物时衰减较大，覆盖范围较小，适合密集区域</p>
-<p>短距离下，AP和客户端会<strong>默认优先选择5GHz频段</strong>，但对应<strong>2.4Ghz信号强度更高<br>新一代WiFi如</strong>WiFi6E引入了6Ghz频段**来缓解频谱压力，提供更高带宽和更多信道</p>
-<h2 id="WLAN基础"><a href="#WLAN基础" class="headerlink" title="- WLAN基础"></a>- WLAN基础</h2><p><font size=4> <b>1. 基本概念术语</b></font><br><strong>STA(Station)</strong>:<strong>无线终端设备</strong>，如手机电脑等无线终端<br><strong>AC(Access Controller)</strong>:</p>
-]]></content>
-      <tags>
-        <tag>Internet</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>WordPress + MySQL：用 Docker Compose 搭建双容器博客</title>
     <url>/2026/07/19/wordpress-mysql-docker-compose/</url>
     <content><![CDATA[<p>WordPress 是学习 Docker Compose 多容器编排的经典场景：Web 应用依赖数据库，两者有独立生命周期，又必须通过内部网络互相通信。</p>
@@ -1797,6 +1782,21 @@ filetype plugin indent on
         <tag>Docker Compose</tag>
         <tag>WordPress</tag>
         <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>计算机网络相关</title>
+    <url>/2025/11/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</url>
+    <content><![CDATA[<h1 id="WLAN"><a href="#WLAN" class="headerlink" title="WLAN"></a>WLAN</h1><h2 id="IEEE-802-11"><a href="#IEEE-802-11" class="headerlink" title="-  IEEE 802.11"></a>-  IEEE 802.11</h2><p><font size=4> <b>1. 标准认识</b> </font><br>一系列<strong>无线局域网通信标准</strong>，用于规定<strong>无线网络物理层和MAC层</strong>技术规范</p>
+<p><font size=4> <b>2. 物理层技术</b> </font><br>包括多种<strong>扩频技术和调制方式</strong>以适应不同频段和传输速率要求，如:跳频扩频<br>（FHSS），正交频分复用（OFDM），直接序列扩频（DSSS)，多输入多输出（MIMO)</p>
+<p><font size=4> <b>3. MAC层技术</b> </font><br>负责<strong>媒体访问控制和数据链路层的传输控制</strong>，在发送数据前监听信道是否空闲</p>
+<p><font size=4> <b>4. 主要子协议与使用频段认识</b> </font><br>理论速率影响因素：<strong>信道宽带，调制方式，编码率，空间流数量，GI保护间隔，<br>数据子载波数和频段等。<strong>2.4GHz和5GHz频段属于</strong>免许可的ISM频段</strong>，为全球<br>通用频段，适用于高清视频流媒体，在线游戏，大型文件传输等高流量需求。</p>
+<p><strong>2.4GHz频段</strong>:穿透能力强，衰减小，覆盖范围大，适合宽阔区域或隔墙多的环境<br><strong>5GHz频段</strong>：数据传输率较高，穿透障碍物时衰减较大，覆盖范围较小，适合密集区域</p>
+<p>短距离下，AP和客户端会<strong>默认优先选择5GHz频段</strong>，但对应<strong>2.4Ghz信号强度更高<br>新一代WiFi如</strong>WiFi6E引入了6Ghz频段**来缓解频谱压力，提供更高带宽和更多信道</p>
+<h2 id="WLAN基础"><a href="#WLAN基础" class="headerlink" title="- WLAN基础"></a>- WLAN基础</h2><p><font size=4> <b>1. 基本概念术语</b></font><br><strong>STA(Station)</strong>:<strong>无线终端设备</strong>，如手机电脑等无线终端<br><strong>AC(Access Controller)</strong>:</p>
+]]></content>
+      <tags>
+        <tag>Internet</tag>
       </tags>
   </entry>
 </search>

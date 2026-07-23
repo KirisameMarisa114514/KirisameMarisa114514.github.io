@@ -36,7 +36,7 @@
     const canvas = document.createElement('canvas')
     canvas.id = CANVAS_ID
     canvas.width = 500
-    canvas.height = 560
+    canvas.height = 640
     canvas.setAttribute('aria-hidden', 'true')
 
     const closeButton = document.createElement('button')

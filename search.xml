@@ -27,6 +27,11 @@
       </tags>
   </entry>
   <entry>
+    <title>Ciallo～(∠・ω&lt; )⌒★</title>
+    <url>/2025/11/12/hello-world/</url>
+    <content><![CDATA[<h2 id="欢迎喵～"><a href="#欢迎喵～" class="headerlink" title="欢迎喵～"></a>欢迎喵～</h2>]]></content>
+  </entry>
+  <entry>
     <title>FastAPI + psutil + Chart.js：轻量系统监控仪表盘容器化</title>
     <url>/2026/07/19/fastapi-system-monitor-dashboard/</url>
     <content><![CDATA[<p>这是一个基于 FastAPI、psutil 和 Chart.js 的轻量系统监控项目。后端负责采集 CPU、内存、磁盘、网络和进程数据，前端定时请求 REST API，再将数据绘制成动态图表。</p>
@@ -127,102 +132,6 @@
         <tag>psutil</tag>
         <tag>Chart.js</tag>
         <tag>Docker</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Ciallo～(∠・ω&lt; )⌒★</title>
-    <url>/2025/11/12/hello-world/</url>
-    <content><![CDATA[<h2 id="欢迎喵～"><a href="#欢迎喵～" class="headerlink" title="欢迎喵～"></a>欢迎喵～</h2>]]></content>
-  </entry>
-  <entry>
-    <title>Docker Compose 部署 OpenList：持久化配置与本地目录挂载</title>
-    <url>/2026/07/19/openlist-docker-compose-deployment/</url>
-    <content><![CDATA[<p>OpenList 可以把不同来源的文件统一组织到一个 Web 界面中。这次实践使用 Docker Compose 部署 AIO 镜像，并把配置、运行数据和实际文件目录分开挂载，便于升级与备份。</p>
-<h2 id="当前部署结构"><a href="#当前部署结构" class="headerlink" title="当前部署结构"></a>当前部署结构</h2><p>运行环境使用：</p>
-<table>
-<thead>
-<tr>
-<th>项目</th>
-<th>当前配置</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>镜像</td>
-<td><code>openlistteam/openlist:v4.1.9-aio</code></td>
-</tr>
-<tr>
-<td>容器名</td>
-<td><code>openlist</code></td>
-</tr>
-<tr>
-<td>Web 端口</td>
-<td><code>5244:5244</code></td>
-</tr>
-<tr>
-<td>配置目录</td>
-<td><code>./config:/opt/openlist/config</code></td>
-</tr>
-<tr>
-<td>数据目录</td>
-<td><code>./data:/opt/openlist/data</code></td>
-</tr>
-<tr>
-<td>文件目录</td>
-<td><code>./downloads:/data</code></td>
-</tr>
-</tbody></table>
-<p>对应的 Compose 核心配置如下：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">openlist:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">openlistteam/openlist:v4.1.9-aio</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">openlist</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;5244:5244&quot;</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./config:/opt/openlist/config</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./data:/opt/openlist/data</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./downloads:/data</span></span><br></pre></td></tr></table></figure>
-
-<p>这里没有把所有内容塞进一个目录，而是有意拆成三个层次。</p>
-<h2 id="为什么要拆分挂载"><a href="#为什么要拆分挂载" class="headerlink" title="为什么要拆分挂载"></a>为什么要拆分挂载</h2><h3 id="config"><a href="#config" class="headerlink" title="config"></a>config</h3><p><code>config</code> 保存程序级配置。把它持久化后，重建容器时不需要重新调整基础运行参数。</p>
-<h3 id="data"><a href="#data" class="headerlink" title="data"></a>data</h3><p><code>data</code> 保存数据库、日志和 OpenList 自身的运行状态，是最需要备份的部分。数据库正在写入时不应直接随意复制；更稳妥的做法是先停止容器，或使用数据库支持的一致性备份方式。</p>
-<h3 id="downloads"><a href="#downloads" class="headerlink" title="downloads"></a>downloads</h3><p><code>downloads</code> 是真正存放用户文件的宿主机目录，在容器内映射为 <code>/data</code>。OpenList 后台添加“本地存储”时，应填写容器看到的 <code>/data</code>，而不是宿主机路径。</p>
-<p>这也是容器挂载最容易混淆的地方：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">宿主机路径                         容器内路径</span><br><span class="line">$HOME/project/Openlist/downloads      -&gt;  /data</span><br></pre></td></tr></table></figure>
-
-<p>Web 管理界面运行在容器内部，因此它只能理解右侧路径。</p>
-<h2 id="启动和查看状态"><a href="#启动和查看状态" class="headerlink" title="启动和查看状态"></a>启动和查看状态</h2><p>进入 Compose 文件所在目录后：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker compose pull</span><br><span class="line">docker compose up -d</span><br><span class="line">docker compose ps</span><br></pre></td></tr></table></figure>
-
-<p>查看最近日志：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker compose logs --<span class="built_in">tail</span> 100 openlist</span><br></pre></td></tr></table></figure>
-
-<p>本机访问地址：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">http://127.0.0.1:5244/</span><br></pre></td></tr></table></figure>
-
-<p>如果从其他设备访问，需要确认防火墙和局域网访问策略，而不是直接把管理端口暴露到公网。</p>
-<h2 id="添加本地存储时的检查项"><a href="#添加本地存储时的检查项" class="headerlink" title="添加本地存储时的检查项"></a>添加本地存储时的检查项</h2><ol>
-<li>驱动选择“本地存储”；</li>
-<li>挂载路径使用站点中的虚拟路径；</li>
-<li>根文件夹路径填写容器内的 <code>/data</code>；</li>
-<li>检查目录的读取和写入权限；</li>
-<li>不要把管理令牌、密码或数据库文件写进博客和公开仓库。</li>
-</ol>
-<p>权限问题不建议通过整个项目递归 <code>777</code> 来长期解决。更合适的方式是确认容器运行用户，再为对应目录设置所有者和最小可用权限。</p>
-<h2 id="升级策略"><a href="#升级策略" class="headerlink" title="升级策略"></a>升级策略</h2><p>升级前先记录当前镜像版本，并备份 <code>config</code> 与 <code>data</code>：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker compose down</span><br><span class="line"><span class="comment"># 在这里执行自己的备份操作</span></span><br><span class="line">docker compose pull</span><br><span class="line">docker compose up -d</span><br></pre></td></tr></table></figure>
-
-<p>升级后至少验证：</p>
-<ul>
-<li>首页可以打开；</li>
-<li>管理员能够登录；</li>
-<li>存储列表正常；</li>
-<li><code>/data</code> 下的目录可以浏览；</li>
-<li>上传、下载和预览符合预期；</li>
-<li>日志中没有反复重启或数据库错误。</li>
-</ul>
-<h2 id="这次实践的收获"><a href="#这次实践的收获" class="headerlink" title="这次实践的收获"></a>这次实践的收获</h2><p>OpenList 的部署命令并不复杂，真正需要理解的是“宿主机、容器和应用配置”三层路径之间的关系。只要配置和数据已经持久化，容器本身就可以随时重建；而目录挂载、备份一致性和最小权限，才决定服务能否长期稳定运行。</p>
-]]></content>
-      <categories>
-        <category>云原生</category>
-        <category>Docker</category>
-      </categories>
-      <tags>
-        <tag>Docker</tag>
-        <tag>Docker Compose</tag>
-        <tag>OpenList</tag>
-        <tag>Self-hosted</tag>
       </tags>
   </entry>
   <entry>
@@ -343,88 +252,94 @@
       </tags>
   </entry>
   <entry>
-    <title>WordPress + MySQL：用 Docker Compose 搭建双容器博客</title>
-    <url>/2026/07/19/wordpress-mysql-docker-compose/</url>
-    <content><![CDATA[<p>WordPress 是学习 Docker Compose 多容器编排的经典场景：Web 应用依赖数据库，两者有独立生命周期，又必须通过内部网络互相通信。</p>
-<p>这次部署使用两个服务：</p>
+    <title>Docker Compose 部署 OpenList：持久化配置与本地目录挂载</title>
+    <url>/2026/07/19/openlist-docker-compose-deployment/</url>
+    <content><![CDATA[<p>OpenList 可以把不同来源的文件统一组织到一个 Web 界面中。这次实践使用 Docker Compose 部署 AIO 镜像，并把配置、运行数据和实际文件目录分开挂载，便于升级与备份。</p>
+<h2 id="当前部署结构"><a href="#当前部署结构" class="headerlink" title="当前部署结构"></a>当前部署结构</h2><p>运行环境使用：</p>
 <table>
 <thead>
 <tr>
-<th>服务</th>
-<th>镜像</th>
-<th>对外端口</th>
-<th>持久化</th>
+<th>项目</th>
+<th>当前配置</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>WordPress</td>
-<td><code>wordpress:latest</code></td>
-<td><code>8081:80</code></td>
-<td><code>/var/www/html</code></td>
+<td>镜像</td>
+<td><code>openlistteam/openlist:v4.1.9-aio</code></td>
 </tr>
 <tr>
-<td>MySQL</td>
-<td><code>mysql:8.0</code></td>
-<td>不对宿主机公开</td>
-<td><code>/var/lib/mysql</code></td>
+<td>容器名</td>
+<td><code>openlist</code></td>
+</tr>
+<tr>
+<td>Web 端口</td>
+<td><code>5244:5244</code></td>
+</tr>
+<tr>
+<td>配置目录</td>
+<td><code>./config:/opt/openlist/config</code></td>
+</tr>
+<tr>
+<td>数据目录</td>
+<td><code>./data:/opt/openlist/data</code></td>
+</tr>
+<tr>
+<td>文件目录</td>
+<td><code>./downloads:/data</code></td>
 </tr>
 </tbody></table>
-<p>浏览器通过宿主机的 8081 端口访问 WordPress，而 WordPress 在 Compose 默认网络中通过服务名 <code>db</code> 连接 MySQL。</p>
-<h2 id="使用环境变量管理密码"><a href="#使用环境变量管理密码" class="headerlink" title="使用环境变量管理密码"></a>使用环境变量管理密码</h2><p>Compose 文件不应直接写入真实密码，更不能把密码发布到博客或 Git 仓库。可以创建一个不提交的 <code>.env</code>：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">WP_DB_NAME=wordpress</span><br><span class="line">WP_DB_USER=wordpress</span><br><span class="line">WP_DB_PASSWORD=请替换为强密码</span><br><span class="line">WP_DB_ROOT_PASSWORD=请替换为另一个强密码</span><br></pre></td></tr></table></figure>
+<p>对应的 Compose 核心配置如下：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">openlist:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">openlistteam/openlist:v4.1.9-aio</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">openlist</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;5244:5244&quot;</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./config:/opt/openlist/config</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./data:/opt/openlist/data</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./downloads:/data</span></span><br></pre></td></tr></table></figure>
 
-<p>然后在 Compose 中引用：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">db:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">mysql:8.0</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="attr">MYSQL_DATABASE:</span> <span class="string">$&#123;WP_DB_NAME&#125;</span></span><br><span class="line">      <span class="attr">MYSQL_USER:</span> <span class="string">$&#123;WP_DB_USER&#125;</span></span><br><span class="line">      <span class="attr">MYSQL_PASSWORD:</span> <span class="string">$&#123;WP_DB_PASSWORD&#125;</span></span><br><span class="line">      <span class="attr">MYSQL_ROOT_PASSWORD:</span> <span class="string">$&#123;WP_DB_ROOT_PASSWORD&#125;</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">db_data:/var/lib/mysql</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">wordpress:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">wordpress:latest</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">depends_on:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">db</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;8081:80&quot;</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="attr">WORDPRESS_DB_HOST:</span> <span class="string">db:3306</span></span><br><span class="line">      <span class="attr">WORDPRESS_DB_NAME:</span> <span class="string">$&#123;WP_DB_NAME&#125;</span></span><br><span class="line">      <span class="attr">WORDPRESS_DB_USER:</span> <span class="string">$&#123;WP_DB_USER&#125;</span></span><br><span class="line">      <span class="attr">WORDPRESS_DB_PASSWORD:</span> <span class="string">$&#123;WP_DB_PASSWORD&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">volumes:</span></span><br><span class="line">  <span class="attr">db_data:</span></span><br></pre></td></tr></table></figure>
+<p>这里没有把所有内容塞进一个目录，而是有意拆成三个层次。</p>
+<h2 id="为什么要拆分挂载"><a href="#为什么要拆分挂载" class="headerlink" title="为什么要拆分挂载"></a>为什么要拆分挂载</h2><h3 id="config"><a href="#config" class="headerlink" title="config"></a>config</h3><p><code>config</code> 保存程序级配置。把它持久化后，重建容器时不需要重新调整基础运行参数。</p>
+<h3 id="data"><a href="#data" class="headerlink" title="data"></a>data</h3><p><code>data</code> 保存数据库、日志和 OpenList 自身的运行状态，是最需要备份的部分。数据库正在写入时不应直接随意复制；更稳妥的做法是先停止容器，或使用数据库支持的一致性备份方式。</p>
+<h3 id="downloads"><a href="#downloads" class="headerlink" title="downloads"></a>downloads</h3><p><code>downloads</code> 是真正存放用户文件的宿主机目录，在容器内映射为 <code>/data</code>。OpenList 后台添加“本地存储”时，应填写容器看到的 <code>/data</code>，而不是宿主机路径。</p>
+<p>这也是容器挂载最容易混淆的地方：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">宿主机路径                         容器内路径</span><br><span class="line">$HOME/project/Openlist/downloads      -&gt;  /data</span><br></pre></td></tr></table></figure>
 
-<p><code>WORDPRESS_DB_HOST</code> 使用的是 <code>db:3306</code>，不是 <code>localhost</code>。在 WordPress 容器内部，<code>localhost</code> 指向 WordPress 容器自己；Compose 服务名才是访问数据库容器的稳定地址。</p>
-<h2 id="启动流程"><a href="#启动流程" class="headerlink" title="启动流程"></a>启动流程</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker compose config</span><br><span class="line">docker compose up -d</span><br><span class="line">docker compose ps</span><br></pre></td></tr></table></figure>
+<p>Web 管理界面运行在容器内部，因此它只能理解右侧路径。</p>
+<h2 id="启动和查看状态"><a href="#启动和查看状态" class="headerlink" title="启动和查看状态"></a>启动和查看状态</h2><p>进入 Compose 文件所在目录后：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker compose pull</span><br><span class="line">docker compose up -d</span><br><span class="line">docker compose ps</span><br></pre></td></tr></table></figure>
 
-<p>先执行 <code>docker compose config</code> 可以提前发现 YAML 缩进、变量缺失和字段拼写问题。</p>
-<p>部署后访问：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">http://127.0.0.1:8081/</span><br></pre></td></tr></table></figure>
+<p>查看最近日志：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker compose logs --<span class="built_in">tail</span> 100 openlist</span><br></pre></td></tr></table></figure>
 
-<p>第一次打开会进入 WordPress 初始化页面。站点管理员密码与数据库密码用途不同，应分别设置并妥善保存。</p>
-<h2 id="数据持久化"><a href="#数据持久化" class="headerlink" title="数据持久化"></a>数据持久化</h2><p>MySQL 数据保存在命名卷 <code>db_data</code>。即使删除并重建数据库容器，命名卷仍可保留数据。</p>
-<p>查看卷：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker volume <span class="built_in">ls</span></span><br><span class="line">docker volume inspect docker-compose_db_data</span><br></pre></td></tr></table></figure>
+<p>本机访问地址：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">http://127.0.0.1:5244/</span><br></pre></td></tr></table></figure>
 
-<p>WordPress 的程序、插件、主题和上传文件位于 <code>/var/www/html</code>。正式使用时也应为它配置明确的命名卷或绑定挂载，不能只依赖容器可写层。</p>
-<h2 id="服务依赖不等于服务就绪"><a href="#服务依赖不等于服务就绪" class="headerlink" title="服务依赖不等于服务就绪"></a>服务依赖不等于服务就绪</h2><p><code>depends_on</code> 只控制启动顺序，并不保证 MySQL 已经完成初始化。WordPress 可能在数据库启动初期短暂连接失败。</p>
-<p>更稳妥的做法是为 MySQL 添加健康检查：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">healthcheck:</span></span><br><span class="line">  <span class="attr">test:</span> [<span class="string">&quot;CMD&quot;</span>, <span class="string">&quot;mysqladmin&quot;</span>, <span class="string">&quot;ping&quot;</span>, <span class="string">&quot;-h&quot;</span>, <span class="string">&quot;localhost&quot;</span>]</span><br><span class="line">  <span class="attr">interval:</span> <span class="string">10s</span></span><br><span class="line">  <span class="attr">timeout:</span> <span class="string">5s</span></span><br><span class="line">  <span class="attr">retries:</span> <span class="number">10</span></span><br></pre></td></tr></table></figure>
-
-<p>还可以让应用在数据库未就绪时重试，而不是直接退出。</p>
-<h2 id="备份策略"><a href="#备份策略" class="headerlink" title="备份策略"></a>备份策略</h2><p>一个可恢复的 WordPress 备份至少包含两部分：</p>
-<ol>
-<li>MySQL 数据库；</li>
-<li><code>wp-content</code> 中的主题、插件和上传文件。</li>
+<p>如果从其他设备访问，需要确认防火墙和局域网访问策略，而不是直接把管理端口暴露到公网。</p>
+<h2 id="添加本地存储时的检查项"><a href="#添加本地存储时的检查项" class="headerlink" title="添加本地存储时的检查项"></a>添加本地存储时的检查项</h2><ol>
+<li>驱动选择“本地存储”；</li>
+<li>挂载路径使用站点中的虚拟路径；</li>
+<li>根文件夹路径填写容器内的 <code>/data</code>；</li>
+<li>检查目录的读取和写入权限；</li>
+<li>不要把管理令牌、密码或数据库文件写进博客和公开仓库。</li>
 </ol>
-<p>数据库可以通过 <code>mysqldump</code> 导出，文件则使用归档或快照备份。只备份其中一部分，通常无法完整恢复站点。</p>
-<p>恢复演练同样重要。备份文件存在不代表一定可用，应该定期在独立环境中验证导入流程。</p>
-<h2 id="上线前的安全检查"><a href="#上线前的安全检查" class="headerlink" title="上线前的安全检查"></a>上线前的安全检查</h2><ul>
-<li>不把 MySQL 3306 端口直接暴露到公网；</li>
-<li>使用 <code>.env</code> 或更安全的密钥管理方式；</li>
-<li>固定镜像版本，避免 <code>latest</code> 带来不可控升级；</li>
-<li>使用反向代理提供 HTTPS；</li>
-<li>定期更新 WordPress、主题与插件；</li>
-<li>限制后台登录并启用强密码；</li>
-<li>为数据库和 <code>wp-content</code> 建立自动备份；</li>
-<li>查看容器日志和磁盘占用。</li>
+<p>权限问题不建议通过整个项目递归 <code>777</code> 来长期解决。更合适的方式是确认容器运行用户，再为对应目录设置所有者和最小可用权限。</p>
+<h2 id="升级策略"><a href="#升级策略" class="headerlink" title="升级策略"></a>升级策略</h2><p>升级前先记录当前镜像版本，并备份 <code>config</code> 与 <code>data</code>：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker compose down</span><br><span class="line"><span class="comment"># 在这里执行自己的备份操作</span></span><br><span class="line">docker compose pull</span><br><span class="line">docker compose up -d</span><br></pre></td></tr></table></figure>
+
+<p>升级后至少验证：</p>
+<ul>
+<li>首页可以打开；</li>
+<li>管理员能够登录；</li>
+<li>存储列表正常；</li>
+<li><code>/data</code> 下的目录可以浏览；</li>
+<li>上传、下载和预览符合预期；</li>
+<li>日志中没有反复重启或数据库错误。</li>
 </ul>
-<h2 id="这次实践的收获"><a href="#这次实践的收获" class="headerlink" title="这次实践的收获"></a>这次实践的收获</h2><p>WordPress + MySQL 虽然只有两个容器，却覆盖了 Compose 中最核心的概念：服务发现、内部网络、环境变量、命名卷、启动依赖和数据备份。理解这些基础后，再扩展反向代理、Redis、自动证书和持续部署就会自然很多。</p>
+<h2 id="这次实践的收获"><a href="#这次实践的收获" class="headerlink" title="这次实践的收获"></a>这次实践的收获</h2><p>OpenList 的部署命令并不复杂，真正需要理解的是“宿主机、容器和应用配置”三层路径之间的关系。只要配置和数据已经持久化，容器本身就可以随时重建；而目录挂载、备份一致性和最小权限，才决定服务能否长期稳定运行。</p>
 ]]></content>
       <categories>
-        <category>开发</category>
         <category>云原生</category>
         <category>Docker</category>
-        <category>Web</category>
       </categories>
       <tags>
-        <tag>Web</tag>
         <tag>Docker</tag>
         <tag>Docker Compose</tag>
-        <tag>WordPress</tag>
-        <tag>MySQL</tag>
+        <tag>OpenList</tag>
+        <tag>Self-hosted</tag>
       </tags>
   </entry>
   <entry>
@@ -1797,6 +1712,91 @@ filetype plugin indent on
 ]]></content>
       <tags>
         <tag>Internet</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>WordPress + MySQL：用 Docker Compose 搭建双容器博客</title>
+    <url>/2026/07/19/wordpress-mysql-docker-compose/</url>
+    <content><![CDATA[<p>WordPress 是学习 Docker Compose 多容器编排的经典场景：Web 应用依赖数据库，两者有独立生命周期，又必须通过内部网络互相通信。</p>
+<p>这次部署使用两个服务：</p>
+<table>
+<thead>
+<tr>
+<th>服务</th>
+<th>镜像</th>
+<th>对外端口</th>
+<th>持久化</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>WordPress</td>
+<td><code>wordpress:latest</code></td>
+<td><code>8081:80</code></td>
+<td><code>/var/www/html</code></td>
+</tr>
+<tr>
+<td>MySQL</td>
+<td><code>mysql:8.0</code></td>
+<td>不对宿主机公开</td>
+<td><code>/var/lib/mysql</code></td>
+</tr>
+</tbody></table>
+<p>浏览器通过宿主机的 8081 端口访问 WordPress，而 WordPress 在 Compose 默认网络中通过服务名 <code>db</code> 连接 MySQL。</p>
+<h2 id="使用环境变量管理密码"><a href="#使用环境变量管理密码" class="headerlink" title="使用环境变量管理密码"></a>使用环境变量管理密码</h2><p>Compose 文件不应直接写入真实密码，更不能把密码发布到博客或 Git 仓库。可以创建一个不提交的 <code>.env</code>：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">WP_DB_NAME=wordpress</span><br><span class="line">WP_DB_USER=wordpress</span><br><span class="line">WP_DB_PASSWORD=请替换为强密码</span><br><span class="line">WP_DB_ROOT_PASSWORD=请替换为另一个强密码</span><br></pre></td></tr></table></figure>
+
+<p>然后在 Compose 中引用：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">db:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">mysql:8.0</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="attr">MYSQL_DATABASE:</span> <span class="string">$&#123;WP_DB_NAME&#125;</span></span><br><span class="line">      <span class="attr">MYSQL_USER:</span> <span class="string">$&#123;WP_DB_USER&#125;</span></span><br><span class="line">      <span class="attr">MYSQL_PASSWORD:</span> <span class="string">$&#123;WP_DB_PASSWORD&#125;</span></span><br><span class="line">      <span class="attr">MYSQL_ROOT_PASSWORD:</span> <span class="string">$&#123;WP_DB_ROOT_PASSWORD&#125;</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">db_data:/var/lib/mysql</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">wordpress:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">wordpress:latest</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">depends_on:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">db</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;8081:80&quot;</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="attr">WORDPRESS_DB_HOST:</span> <span class="string">db:3306</span></span><br><span class="line">      <span class="attr">WORDPRESS_DB_NAME:</span> <span class="string">$&#123;WP_DB_NAME&#125;</span></span><br><span class="line">      <span class="attr">WORDPRESS_DB_USER:</span> <span class="string">$&#123;WP_DB_USER&#125;</span></span><br><span class="line">      <span class="attr">WORDPRESS_DB_PASSWORD:</span> <span class="string">$&#123;WP_DB_PASSWORD&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">volumes:</span></span><br><span class="line">  <span class="attr">db_data:</span></span><br></pre></td></tr></table></figure>
+
+<p><code>WORDPRESS_DB_HOST</code> 使用的是 <code>db:3306</code>，不是 <code>localhost</code>。在 WordPress 容器内部，<code>localhost</code> 指向 WordPress 容器自己；Compose 服务名才是访问数据库容器的稳定地址。</p>
+<h2 id="启动流程"><a href="#启动流程" class="headerlink" title="启动流程"></a>启动流程</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker compose config</span><br><span class="line">docker compose up -d</span><br><span class="line">docker compose ps</span><br></pre></td></tr></table></figure>
+
+<p>先执行 <code>docker compose config</code> 可以提前发现 YAML 缩进、变量缺失和字段拼写问题。</p>
+<p>部署后访问：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">http://127.0.0.1:8081/</span><br></pre></td></tr></table></figure>
+
+<p>第一次打开会进入 WordPress 初始化页面。站点管理员密码与数据库密码用途不同，应分别设置并妥善保存。</p>
+<h2 id="数据持久化"><a href="#数据持久化" class="headerlink" title="数据持久化"></a>数据持久化</h2><p>MySQL 数据保存在命名卷 <code>db_data</code>。即使删除并重建数据库容器，命名卷仍可保留数据。</p>
+<p>查看卷：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker volume <span class="built_in">ls</span></span><br><span class="line">docker volume inspect docker-compose_db_data</span><br></pre></td></tr></table></figure>
+
+<p>WordPress 的程序、插件、主题和上传文件位于 <code>/var/www/html</code>。正式使用时也应为它配置明确的命名卷或绑定挂载，不能只依赖容器可写层。</p>
+<h2 id="服务依赖不等于服务就绪"><a href="#服务依赖不等于服务就绪" class="headerlink" title="服务依赖不等于服务就绪"></a>服务依赖不等于服务就绪</h2><p><code>depends_on</code> 只控制启动顺序，并不保证 MySQL 已经完成初始化。WordPress 可能在数据库启动初期短暂连接失败。</p>
+<p>更稳妥的做法是为 MySQL 添加健康检查：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">healthcheck:</span></span><br><span class="line">  <span class="attr">test:</span> [<span class="string">&quot;CMD&quot;</span>, <span class="string">&quot;mysqladmin&quot;</span>, <span class="string">&quot;ping&quot;</span>, <span class="string">&quot;-h&quot;</span>, <span class="string">&quot;localhost&quot;</span>]</span><br><span class="line">  <span class="attr">interval:</span> <span class="string">10s</span></span><br><span class="line">  <span class="attr">timeout:</span> <span class="string">5s</span></span><br><span class="line">  <span class="attr">retries:</span> <span class="number">10</span></span><br></pre></td></tr></table></figure>
+
+<p>还可以让应用在数据库未就绪时重试，而不是直接退出。</p>
+<h2 id="备份策略"><a href="#备份策略" class="headerlink" title="备份策略"></a>备份策略</h2><p>一个可恢复的 WordPress 备份至少包含两部分：</p>
+<ol>
+<li>MySQL 数据库；</li>
+<li><code>wp-content</code> 中的主题、插件和上传文件。</li>
+</ol>
+<p>数据库可以通过 <code>mysqldump</code> 导出，文件则使用归档或快照备份。只备份其中一部分，通常无法完整恢复站点。</p>
+<p>恢复演练同样重要。备份文件存在不代表一定可用，应该定期在独立环境中验证导入流程。</p>
+<h2 id="上线前的安全检查"><a href="#上线前的安全检查" class="headerlink" title="上线前的安全检查"></a>上线前的安全检查</h2><ul>
+<li>不把 MySQL 3306 端口直接暴露到公网；</li>
+<li>使用 <code>.env</code> 或更安全的密钥管理方式；</li>
+<li>固定镜像版本，避免 <code>latest</code> 带来不可控升级；</li>
+<li>使用反向代理提供 HTTPS；</li>
+<li>定期更新 WordPress、主题与插件；</li>
+<li>限制后台登录并启用强密码；</li>
+<li>为数据库和 <code>wp-content</code> 建立自动备份；</li>
+<li>查看容器日志和磁盘占用。</li>
+</ul>
+<h2 id="这次实践的收获"><a href="#这次实践的收获" class="headerlink" title="这次实践的收获"></a>这次实践的收获</h2><p>WordPress + MySQL 虽然只有两个容器，却覆盖了 Compose 中最核心的概念：服务发现、内部网络、环境变量、命名卷、启动依赖和数据备份。理解这些基础后，再扩展反向代理、Redis、自动证书和持续部署就会自然很多。</p>
+]]></content>
+      <categories>
+        <category>开发</category>
+        <category>云原生</category>
+        <category>Docker</category>
+        <category>Web</category>
+      </categories>
+      <tags>
+        <tag>Web</tag>
+        <tag>Docker</tag>
+        <tag>Docker Compose</tag>
+        <tag>WordPress</tag>
+        <tag>MySQL</tag>
       </tags>
   </entry>
 </search>
